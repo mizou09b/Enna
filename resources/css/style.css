@@ -1,0 +1,745 @@
+html {
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "PT sans", sans-serif;
+    font-size: 1rem;
+    color: black;
+}
+
+p {
+    color: #495057;
+}
+
+h1 {
+    font-weight: bold;
+    position: relative;
+    color: white;
+}
+
+.h2-styles {
+    color: #011D70;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+h1:hover {
+    cursor: default;
+    text-shadow: 0 0 10px #007bff, 0 0 20px #007bff, 0 0 50px #007bff;
+}
+
+
+/* card button te3 a propos de nous */
+.read-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    text-decoration: none;
+    border-radius: 15px; /* Rounded corners */
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.read-more-btn:hover {
+    background-color: #011D70; /* Darker blue on hover */
+    color: white; /* Keep white text */
+}
+
+.background {
+    background: url("/public/images/bg_image.jpeg") no-repeat center center/cover;
+    position: relative;
+    height: 100vh;
+    background-position: center 10%;
+    border-bottom-left-radius: 50% 20px; /* Customize these values */
+    border-bottom-right-radius: 50% 20px;
+    overflow: hidden;
+}
+
+
+.about_background {
+    background: url("/public/images/pikaso_edit_comic-art-graphic-novel-art-comic-illustration-hig.jpeg") no-repeat center center/cover;
+    position: relative;
+    height: 90vh;
+    background-position: center top;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+    overflow: hidden;
+}
+
+
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Ensure nav is above background */
+}
+
+/* Show sticky navbar when scrolling down */
+.fade-navbar {
+    background-color: #011D70;
+    position: fixed; /* Make it fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+a {
+    font-weight: bold;
+}
+
+/* Ensure links are centered and text is black */
+.fade-navbar .nav-links {
+    display: flex;
+    justify-content: center; /* Center the links */
+    width: 100%; /* Make sure it uses full width */
+}
+
+.fade-navbar .nav-links a {
+    color: white; /* Make text black when the fade navbar appears */
+    margin: 0 15px; /* Add some margin */
+}
+
+.fade-navbar.show {
+    opacity: 0.8; /* Make it fully visible when it has 'show' class */
+    width: 100%;
+}
+
+/* Ensure main navbar does not hide */
+.fade-navbar:not(.show) {
+    opacity: 0; /* Hide the fade navbar when it's not shown */
+    width: 0;
+    transition: none;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 45px;
+    padding-top: 10px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    display: inline-block;
+    transition: all 0.4s;
+}
+
+.main-navbar .nav-links a:hover {
+    text-shadow: 0 0 10px #007bff, 0 0 20px #007bff, 0 0 50px #007bff;
+}
+
+.fade-navbar .nav-links a:hover {
+    text-shadow: 0 0 10px #ffff, 0 0 20px #ffff, 0 0 50px #ffff;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-icon {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 4px;
+    border-radius: 5px;
+    background: transparent;
+    transition: background 0.3s;
+    color: white;
+}
+
+.search-icon:hover {
+    background: white;
+    color: black;
+}
+
+.search-box {
+    display: none;
+    opacity: 0;
+    padding: 5px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Section Below Background about us*/
+.overview {
+    background-color: white; /* Color of the next section */
+    padding: 60px 0;
+}
+
+.company-description {
+    background-color: white; /* Background color for the section */
+    padding: 60px 0; /* Padding around the section */
+}
+
+.description-content {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    /* max-width: ; Max width for the content */
+    margin: 0 auto; /* Center the content */
+    gap: 20px; /* Space between image and text */
+}
+
+.company-image {
+    width: 400px; /* Fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 25px; /* Optional: add border-radius for aesthetics */
+}
+
+.description-text {
+    flex: 1; /* Allow text to take the remaining space */
+}
+
+.description-text h2 {
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.description-text p {
+    margin-bottom: 15px; /* Space below paragraphs */
+    line-height: 1.6; /* Improve readability */
+}
+
+/* sliding button css  */
+.css-button-sliding-to-bottom--blue {
+    min-width: 80px;
+    height: 40px;
+    color: #011D70;
+    padding: 5px 18px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 20px;
+    z-index: 0;
+    background: white;
+    overflow: hidden;
+    border: 2px solid #011D70;
+    color: #011D70;
+    margin: 10px 22px;
+    text-decoration: none;
+}
+.css-button-sliding-to-bottom--blue:hover {
+    color: white;
+}
+.css-button-sliding-to-bottom--blue:hover:after {
+    height: 100%;
+}
+.css-button-sliding-to-bottom--blue:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s ease;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    background: #011D70;
+}
+
+
+/* section blow about us(test) */
+.text_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 120ch;
+}
+
+/* test section images */
+.text_image2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.text_image2 .img2 {
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    margin-top: 60px;
+    margin-left: 150px;
+}
+
+.text_image1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.text_image1 .img1 {
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    margin-top: 60px;
+    margin-right: 150px;
+}
+
+.btn_class {
+    background-color: white;
+    color: #011D70;
+    border: 2px solid #011D70;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+.btn_class:hover {
+    background-color: #011D70;
+    color: white;
+    border-color: #011D70;
+}
+
+/* services et activity */
+.services-activities {
+    background: linear-gradient(rgba(0, 203, 217, 0.5), rgba(0, 203, 217, 0.5));
+        /* url("https://www.enna.dz/wp-content/uploads/2021/05/Services-ENNA.jpg") */
+            /* no-repeat center center/cover; */
+    background-position: center 10%;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+    padding: 30px 0; /* Padding around the section */
+    color: black white; /* Text color */
+    width: 100%;
+}
+
+/* Slider images css */
+.slider {
+    width: 100%;
+    border: 2px solid white;
+    height: 310px;
+    overflow: hidden;
+    border-radius: 10px;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #4b4b4b 20% 80%,
+        transparent
+    );
+}
+
+.list {
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin: 10px;
+}
+
+.item {
+    height: 270px;
+    width: 250px;
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc((10s / 5) * var(--position));
+}
+
+.item img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -250px;
+    }
+}
+
+.list:hover .item {
+    animation-play-state: paused !important;
+}
+
+h5 {
+    margin-top: 10px;
+    font-size: 110%;
+    text-align: center;
+    color: white;
+}
+
+/* button menu css */
+.menu-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; /* Aligne le menu à droite */
+    z-index: 100;
+}
+
+.menu-button {
+    width: 100px;
+    height: 60px;
+    background-color: rgb(255, 255, 255, 0.7);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+    color: #011D70;
+    border: 2px solid #011D70;
+    font-weight: bold;
+    font-family: "PT sans", sans-serif;
+    animation: slideOut 5s 2;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(150%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.menu-button:hover {
+    background-color: #011D70;
+    color: white;
+}
+
+.social-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    background: transparent;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-menu.active {
+    display: flex;
+    transform: translateX(-50%) scaleY(1);
+}
+
+.social-icon {
+    width: 70px;
+    height: 35px;
+    margin: 5px;
+    border-radius: 25px;
+    background-color: #011D70;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+    border: 2px solid #011D70;
+    font-family: "PT sans", sans-serif;
+    text-align: center;
+}
+.social-icon:hover {
+    transform: scale(1.1);
+    text-align: center;
+}
+
+.icon-title {
+    font-size: 12px;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Tooltip css */
+.social-icon {
+    position: relative; /* Position context for the tooltip */
+    display: inline-block; /* Ensures the anchor behaves as a block */
+}
+
+.tooltip-text {
+    visibility: hidden; /* Initially hidden */
+    width: 120px; /* Width of the tooltip */
+    background-color: rgb(255, 255, 255); /* Background color */
+    color: #011D70; /* Text color */
+    text-align: center; /* Center the text */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding */
+    position: absolute; /* Position the tooltip */
+    z-index: 1; /* Ensure it appears above other elements */
+    left: -200%; /* Position to the left of the icon */
+    top: 50%; /* Center vertically relative to the icon */
+    transform: translateY(-50%); /* Adjust to center vertically */
+    opacity: 0; /* Set opacity for fade-in effect */
+    transition: opacity 0.3s; /* Smooth transition */
+    font-weight: normal;
+    font-size: small;
+}
+
+.social-icon:hover .tooltip-text {
+    visibility: visible; /* Show the tooltip on hover */
+    opacity: 1; /* Fade in the tooltip */
+}
+
+/* Enna en chiffre css :  */
+.ennaEnChiffre {
+    background: #f2f4f8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: "TP Sans";
+    margin: 20px;
+}
+
+.education {
+    --bg-color: #2F55D4;
+    --bg-color-light: white;
+    --text-color-hover: white;
+    --box-shadow-color: rgb(15, 108, 166, 0.48);
+}
+
+.credentialing {
+    --bg-color: #2F55D4;
+    --bg-color-light: white;
+    --text-color-hover: white;
+    --box-shadow-color: rgb(15, 108, 166, 0.48);
+}
+
+.wallet {
+    --bg-color: #2F55D4;
+    --bg-color-light: white;
+    --text-color-hover: white;
+    --box-shadow-color: rgb(15, 108, 166, 0.48);
+}
+
+.human-resources {
+    --bg-color: #2F55D4;
+    --bg-color-light: white;
+    --text-color-hover: white;
+    --box-shadow-color: rgb(15, 108, 166, 0.48);
+}
+
+.cardE {
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+    background: white;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+}
+
+.cardE:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px rgba(255, 255, 255, 0.11),
+        0 24px 46px var(--box-shadow-color);
+}
+
+.cardE:hover .overlay {
+    transform: scale(4) translateZ(0);
+}
+
+.cardE:hover .circle {
+    border-color: var(--bg-color-light);
+    background: var(--bg-color);
+}
+
+.cardE:hover .circle:after {
+    background: var(--bg-color-light);
+}
+
+.cardE:hover p,
+.cardE:hover .numbers-data{
+    color: var(--text-color-hover);
+    opacity: 1;
+}
+
+
+
+.cardE:active {
+    transform: scale(1) translateZ(0);
+    box-shadow: 0 15px 24px rgba(0, 0, 0, 0.11),
+        0 15px 24px var(--box-shadow-color);
+}
+
+.cardE p {
+    font-size: 17px;
+    color: #011D70;
+    margin-top: 60px;
+    z-index: 10;
+    transition: color 0.3s ease-out;
+    text-align: center;
+}
+
+.circle {
+    width: 131px;
+    height: 131px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease-out;
+}
+
+.circle:after {
+    content: "";
+    width: 118px;
+    height: 118px;
+    display: block;
+    position: absolute;
+    background: var(--bg-color);
+    border-radius: 50%;
+    top: 7px;
+    left: 7px;
+    transition: opacity 0.3s ease-out;
+}
+
+.overlay {
+    width: 118px;
+    position: absolute;
+    height: 118px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    top: 70px;
+    left: 50px;
+    z-index: 0;
+    transition: transform 0.3s ease-out;
+}
+
+.circle i {
+    position: relative;
+    font-size: 3rem; /* Adjust font size if necessary */
+    z-index: 10; /* Ensure it's above the background */
+    color: white; /* Ensure it uses the correct color */
+}
+
+.cardE:hover .circle i {
+    color: #011D70; /* Change this to the color you want for the icon on hover */
+}
+
+.numbers-data {
+    color: #2F55D4;
+    font-size: 25px;
+    z-index: 20;
+}
+
+/* rgb(0, 203, 217) */
+
+
+/* media queries :  */
+
+/* Mobile Styles (up to 480px) */
+@media (max-width: 480px) {
+    .fade-navbar {
+        font-size: 12px; /* Smaller font size */
+        padding: 5px; /* Reduced padding */
+    }
+
+    .ennaEnChiffre {
+        flex-direction: column; /* Stack cards vertically */
+    }
+
+    .cardE {
+        width: 100%; /* Full width cards */
+        margin-bottom: 10px; /* Space between cards */
+    }
+
+    /* Other styles for mobile */
+}
+
+/* Small Tablet Styles (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .fade-navbar {
+        font-size: 14px; /* Adjust font size */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .ennaEnChiffre {
+        flex-direction: row; /* Cards in a row */
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+
+    .cardE {
+        width: 45%; /* Two cards per row */
+        margin: 2.5%; /* Space between cards */
+    }
+
+    /* Other styles for small tablets */
+}
+
+/* Medium Tablet Styles (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .fade-navbar {
+        font-size: 16px; /* Adjust font size */
+        padding: 15px; /* Increase padding */
+    }
+
+    .ennaEnChiffre {
+        flex-direction: row; /* Keep cards in a row */
+    }
+
+    .cardE {
+        width: 30%; /* Three cards per row */
+        margin: 1.5%; /* Space between cards */
+    }
+
+    /* Other styles for medium tablets */
+}
+
+/* Desktop Styles (1025px and above) */
+@media (min-width: 1025px) {
+    .fade-navbar {
+        font-size: 18px; /* Default font size */
+        padding: 20px; /* Default padding */
+    }
+
+    .ennaEnChiffre {
+        flex-direction: row; /* Keep cards in a row */
+    }
+
+    .cardE {
+        width: 22%; /* Four cards per row */
+        margin: 1%; /* Space between cards */
+    }
+
+    /* Other styles for desktops */
+}
+
