@@ -1,5 +1,5 @@
 
-<x-layout :showCard='false' aboutBg='about_background'>
+<x-layout :showCard='false' aboutBg='about_background' >
 
     <div class="container">
  <!-- About Us Section -->

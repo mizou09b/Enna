@@ -1,4 +1,4 @@
-<x-layout :showCard='false' offresCss='css/styleOffres.css' aboutBg='none'>
+<x-layout :showCard='false' offresCss='css/styleOffres.css' aboutBg='none' :showHeader='false'>
 
     @if (session()->has('success'))
         <div class="container container-narrow mt-3">
@@ -121,7 +121,7 @@
                                 <td>
                                     @if ($offre->pdf)
                                         <a href="{{ route('pdf.download', ['pdf' => basename($offre->pdf)]) }}"
-                                            target="_blank">Offre pdf</a>
+                                            target="_blank">Download pdf</a>
                                     @else
                                         No PDF available
                                     @endif

@@ -35,7 +35,7 @@
 <body>
     {{-- header begins here --}}
     <header>
-        <div class="{{$aboutBg ?? 'background'}}">
+        <div class="{{ $aboutBg ?? 'background' }}">
             <nav class="main-navbar">
                 <div class="logo">
                     <img src="https://www.enna.dz/wp-content/themes/enna/assets/images/logo-ENNA.png"
@@ -68,12 +68,10 @@
                 </nav>
             </nav>
 
-            @if ($showHeader ?? false)
-            <div>
-                <h1 class="display-4 pt-5 ps-3 mt-2" >
+            @if ($showHeader ?? true)
+                <h1 class="display-4 pt-5 ps-3 mt-2">
                     Etablissement National<br> <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; de la Navigation
                         Aérienne</span></h1>
-            </div>
             @endif
 
         </div>
@@ -154,7 +152,7 @@
         </div>
     </div>
 
-        {{ $slot }}
+    {{ $slot }}
 
     {{-- footer begins here! --}}
     <footer class="bg-dark text-white py-4">
