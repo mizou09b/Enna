@@ -68,11 +68,14 @@
                 </nav>
             </nav>
 
+            @if ($showHeader ?? false)
             <div>
-                <h1 class="display-4 pt-5 ps-3 mt-2">
+                <h1 class="display-4 pt-5 ps-3 mt-2" >
                     Etablissement National<br> <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; de la Navigation
                         Aérienne</span></h1>
             </div>
+            @endif
+
         </div>
 
         <!-- layout Card -->

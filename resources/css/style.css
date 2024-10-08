@@ -80,6 +80,16 @@ h1:hover {
     overflow: hidden;
 }
 
+.none {
+    background: #011D70 no-repeat center center/cover;
+    position: relative;
+    height: 50vh;
+    background-position: center top;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+    overflow: hidden;
+}
+
 
 .main-navbar {
     display: flex;

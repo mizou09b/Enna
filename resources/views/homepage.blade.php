@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout >
 
     <!-- About Us Section -->
     <section class="company-description">
