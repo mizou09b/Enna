@@ -43,10 +43,10 @@
                 </div>
                 <div class="nav-links">
                     <a href="/"><i class="fa-solid fa-house"></i></a>
-                    <a href="/about">À Propos</a>
-                    <a href="#">Services</a>
-                    <a href="#">Activités</a>
-                    <a href="/offres">Offres</a>
+                        <a href="/about">{{ __('navbar.about')}}</a>
+                        <a href="#">{{ __('navbar.services') }}</a>
+                        <a href="#">{{ __('navbar.activity') }}</a>
+                        <a href="/offres">{{ __('navbar.offers') }}</a>
                 </div>
                 <div class="search-container">
                     <span class="search-icon" onclick="toggleSearch()" aria-label="Ouvrir la recherche"> <i
@@ -60,18 +60,16 @@
                         <div class="logo">
                         </div>
                         <a href="/"><i class="fa-solid fa-house"></i></a>
-                        <a href="/about">À Propos</b></a>
-                        <a href="#">Services</a>
-                        <a href="#">Activités</a>
-                        <a href="/offres">Offres</a>
+                        <a href="/about">{{ __('navbar.about')}}</a>
+                        <a href="#">{{ __('navbar.services') }}</a>
+                        <a href="#">{{ __('navbar.activity') }}</a>
+                        <a href="/offres">{{ __('navbar.offers') }}</a>
                     </div>
                 </nav>
             </nav>
 
             @if ($showHeader ?? true)
-                <h1 class="display-4 pt-5 ps-3 mt-2">
-                    Etablissement National<br> <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; de la Navigation
-                        Aérienne</span></h1>
+                <h1 class="display-4 pt-5 ps-3 mt-2"> {!!__('navbar.bg-header')!!}</h1>
             @endif
 
         </div>
@@ -97,6 +95,20 @@
                 </div>
             </div>
         @endif
+
+        <!-- Sidebar Dropdown Menu -->
+        <aside class="open-moteur">
+            <button class="openbtn " type="button" id="languageDropdown" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="wording">Langues</span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown" style="left: -100px;">
+                <!-- Position the dropdown to the left -->
+                <li><a class="dropdown-item" href="/lang/en">English</a></li>
+                <li><a class="dropdown-item" href="/lang/ar">Arabe</a></li>
+            </ul>
+        </aside>
+
     </header>
     {{-- header ends here --}}
 
@@ -183,6 +195,8 @@
 
     {{-- script section  --}}
     @vite(['resources/css/style.css', 'resources/js/script.js']) {{--  run npm install and npm run dev --}}
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

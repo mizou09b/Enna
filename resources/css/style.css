@@ -22,6 +22,11 @@ h1 {
     font-weight: bold;
     position: relative;
     color: white;
+    margin-left: 30px;
+}
+
+.indented-text {
+    margin-left: 50px;
 }
 
 .h2-styles {
@@ -98,6 +103,39 @@ h1:hover {
     padding: 20px;
     position: relative;
     z-index: 1; /* Ensure nav is above background */
+}
+
+
+/* vertical dropdown menu for langs */
+.open-moteur {
+    position: fixed; /* Fix to the side of the screen */
+    top: 15%; /* Adjust as needed */
+    left: 0; /* Stuck to the left */
+    /* background-color: #007bff; */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    z-index: 1030; /* Ensure it stays on top */
+}
+.openbtn {
+    display: block; /* Block for stacking */
+    padding: 8px;
+    text-align: center; /* Center the text */
+    border: none;
+    background-color: #011D70; /* Transparent background */
+    cursor: pointer; /* Pointer cursor */
+    transition: background 0.3s; /* Transition for hover effect */
+    border-radius: 10px;
+}
+.openbtn:hover {
+    background-color: white; /* Hover effect */
+}
+.wording {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    color: white;
+}
+
+.dropdown-menu {
+    padding: 0px;
 }
 
 /* Show sticky navbar when scrolling down */
