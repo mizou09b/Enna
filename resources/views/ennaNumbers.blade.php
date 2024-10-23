@@ -72,7 +72,6 @@
                 @enderror
             </div>
 
-
             <div class="mb-3">
                 <label for="Aerodromes_Nationaux" class="form-label" >Aerodromes Nationaux* :</label>
                 <input type="text" id="Aerodromes_Nationaux" name="Aerodromes_Nationaux" value="{{ old('Aerodromes_Nationaux') }}"

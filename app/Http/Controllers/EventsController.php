@@ -20,7 +20,7 @@ class EventsController extends Controller
         $eventsData = $request->validate([
             'title' => 'required',
             'observation' => 'nullable',
-            'event_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'event_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|',
             'date_end_event' => ['required', 'date', 'after_or_equal:today']
         ]);
 
@@ -58,12 +58,21 @@ class EventsController extends Controller
         $validation_event = $request->validate([
             'title' => 'required',
             'observation' => 'nullable',
-            'event_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'event_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|',
             'date_end_event' => ['required', 'date', 'after_or_equal:today']
         ]);
 
-        $event->update($validation_event);
-        return redirect('events')->with('success', "event edited with success");
+        // Check if an image was uploaded
+        if ($request->hasFile('event_image')) {
+            // Store the image and get the file path
+            $imagePath = $request->file('event_image')->store('event_images', 'public');
+
+            // Add the new image path to the validated data
+            $validation_event['event_image'] = $imagePath;
+
+            $event->update($validation_event);
+            return redirect('events')->with('success', "event edited with success");
+        }
     }
 
     //delete event :

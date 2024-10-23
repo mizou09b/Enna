@@ -73,27 +73,27 @@
             </div>
 
             <div class="mb-3">
-                <label for="objetEn" class="form-label" value="{{ old('objetEn') }}">Objet in English* :</label>
+                <label for="objetEn" class="form-label">Objet in English* :</label>
                 <input type="text" id="objetEn" name="objetEn"
-                    class="form-control @error('objetEn') border-danger @enderror">
+                    class="form-control @error('objetEn') border-danger @enderror" value="{{ old('objetEn') }}">
                 @error('objetEn')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="objetAr" class="form-label" value="{{ old('objetAr') }}">الموضوع* :</label>
+                <label for="objetAr" class="form-label">الموضوع* :</label>
                 <input type="text" id="objetAr" name="objetAr"
-                    class="form-control @error('objetAr') border-danger @enderror">
+                    class="form-control @error('objetAr') border-danger @enderror" value="{{ old('objetAr') }}">
                 @error('objetAr')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="date_Limite" class="form-label" value="{{ old('date_Limite') }}">Date limite* :</label>
+                <label for="date_Limite" class="form-label">Date limite* :</label>
                 <input type="date" id="date_Limite" name="date_Limite"
-                    class="form-control @error('date_Limite') border-danger @enderror">
+                    class="form-control @error('date_Limite') border-danger @enderror" value="{{ old('date_Limite') }}">
                 @error('date_Limite')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -102,8 +102,7 @@
             <div class="mb-3">
                 <label for="proroge" class="form-label">Prorogé au :</label>
                 <input type="date" id="date_proroge" name="date_proroge"
-                    class="form-control @error('date_proroge') border-danger @enderror"
-                    value="{{ old('date_proroge') }}">
+                    class="form-control @error('date_proroge') border-danger @enderror" value="{{ old('date_proroge') }}">
                 @error('date_proroge')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -112,7 +111,7 @@
             <div class="mb-3">
                 <label for="pdf" class="form-label">Upload PDF:</label>
                 <input type="file" name="pdf" id="pdf"
-                    class="form-control @error('pdf') border-danger" @enderror accept="application/pdf">
+                    class="form-control @error('pdf') border-danger @enderror" accept="application/pdf">
                 @error('pdf')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -120,45 +119,37 @@
 
             <div class="mb-3">
                 <label for="observation" class="form-label">Observation :</label>
-                <textarea id="observation" name="observation" class="form-control @error('observation') border-danger @enderror "
+                <textarea id="observation" name="observation" class="form-control @error('observation') border-danger @enderror"
                     rows="4" cols="50">{{ old('observation') }}</textarea>
                 @error('observation')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Confimer</button>
+            <button type="submit" class="btn btn-primary">Confirmer</button>
             <a href="/offres" class="btn btn-info ms-2 text-decoration-none">Consulter les offres</a>
             <a href="/menuAdmin" class="btn btn-dark ms-2 text-decoration-none">Menu Admin</a>
             <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">Déconnecter</button>
         </form>
-        <div class="container d-flex pb-4">
-
-        </div>
     </div>
 
     <script>
         async function confirmLogout() {
-
             if (confirm("Êtes-vous sûr de vouloir vous déconnecter ?")) {
                 const response = await fetch('/adminLogout', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'  // Include CSRF token
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     }
                 });
 
                 if (response.ok) {
-                    // Redirect to the login page or wherever you want after logout
                     window.location.href = '/offres';
                 }
             }
         }
     </script>
-
-    </div>
-    </div>
 </body>
 
 </html>

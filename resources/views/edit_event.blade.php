@@ -66,7 +66,7 @@
             @method('PUT')
             <div class="mb-3">
                 <label for="title" class="form-label">Title* :</label>
-                <input type="text" id="title" name="title" value="{{ old('title') }}"
+                <input type="text" id="title" name="title" value="{{ old('title', $event->title) }}"
                     class="form-control @error('title') border-danger @enderror">
                 @error('title')
                     <p class="text-danger">{{ $message }}</p>
@@ -76,15 +76,15 @@
             <div class="mb-3">
                 <label for="observation" class="form-label">Observation :</label>
                 <textarea id="observation" name="observation" class="form-control @error('observation') border-danger @enderror "
-                    rows="4" cols="50">{{ old('observation') }}</textarea>
+                    rows="4" cols="50">{{ old('observation', $event->observation) }}</textarea>
                 @error('observation')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="event_image" class="form-label" >Upload Image* :</label>
-                <input type="file" id="event_image" name="event_image" value="{{ old('event_image') }}" class="form-control @error('event_image') border-danger @enderror">
+                <label for="event_image" class="form-label">Upload Image* :</label>
+                <input type="file" id="event_image" name="event_image" class="form-control @error('event_image') border-danger @enderror">
                 @error('event_image')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -92,7 +92,8 @@
 
             <div class="mb-3">
                 <label for="date_end_event" class="form-label">Date of event end* :</label>
-                <input type="date" id="date_end_event" name="date_end_event"  value="{{ old('date_end_event') }}" class="form-control @error('date_end_event') border-danger @enderror">
+                <input type="date" id="date_end_event" name="date_end_event" value="{{ old('date_end_event', $event->date_end_event) }}"
+                    class="form-control @error('date_end_event') border-danger @enderror">
                 @error('date_end_event')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror

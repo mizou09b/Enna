@@ -56,26 +56,40 @@
             @csrf
             @method('PUT')
             <div class="mb-3">
-                <label for="numero" class="form-label" value="{{ $offre->numero }}">Numéro :</label>
+                <label for="numero" class="form-label">Numéro :</label>
                 <input type="text" id="numero" name="numero"
-                    class="form-control @error('numero') border-danger @enderror" value="{{ $offre->numero }}">
+                    class="form-control @error('numero') border-danger @enderror"
+                    value="{{ old('numero', $offre->numero) }}">
                 @error('numero')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="objet" class="form-label" >Objet :</label>
-                <input type="text" id="objet" value="{{ $offre->objet }}" name="objet"  class="form-control @error('objet') border-danger @enderror">
-                @error('objet')
+                <label for="objetEn" class="form-label">Objet in English* :</label>
+                <input type="text" id="objetEn" name="objetEn"
+                    class="form-control @error('objetEn') border-danger @enderror"
+                    value="{{ old('objetEn', $offer->objetEn ?? '') }}">
+                @error('objetEn')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="date_Limite" class="form-label" value="{{ $offre->date_Limite }}">Date limite :</label>
+                <label for="objetAr" class="form-label">الموضوع* :</label>
+                <input type="text" id="objetAr" name="objetAr"
+                    class="form-control @error('objetAr') border-danger @enderror"
+                    value="{{ old('objetAr', $offer->objetAr ?? '') }}">
+                @error('objetAr')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="date_Limite" class="form-label">Date limite :</label>
                 <input type="date" id="date_Limite" name="date_Limite"
-                    class="form-control @error('date_Limite') border-danger @enderror">
+                    class="form-control @error('date_Limite') border-danger @enderror"
+                    value="{{ old('date_Limite', $offre->date_Limite) }}">
                 @error('date_Limite')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -85,7 +99,7 @@
                 <label for="proroge" class="form-label">Prorogé au :</label>
                 <input type="date" id="date_proroge" name="date_proroge"
                     class="form-control @error('date_proroge') border-danger @enderror"
-                    value="{{ $offre->date_proroge }}">
+                    value="{{ old('date_proroge', $offre->date_proroge) }}">
                 @error('date_proroge')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -94,7 +108,7 @@
             <div class="mb-3">
                 <label for="pdf" class="form-label">Upload PDF:</label>
                 <input type="file" name="pdf" id="pdf"
-                    class="form-control @error('pdf') border-danger" @enderror accept="application/pdf">
+                    class="form-control @error('pdf') border-danger @enderror" accept="application/pdf">
                 @error('pdf')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -102,8 +116,9 @@
 
             <div class="mb-3">
                 <label for="observation" class="form-label">Observation :</label>
-                <textarea id="observation" name="observation" class="form-control @error('observation') border-danger @enderror "
-                    rows="4" cols="50">{{ $offre->observation }}</textarea>
+                <textarea id="observation" name="observation"
+                    class="form-control @error('observation') border-danger @enderror"
+                    rows="4" cols="50">{{ old('observation', $offre->observation) }}</textarea>
                 @error('observation')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror

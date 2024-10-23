@@ -60,13 +60,13 @@
     @endif
 
     <div class="container mt-5">
-        <h1 class="mb-4">Ajouter un evenement</h1>
+        <h1 class="mb-4">Add Event</h1>
         <form action="/eventsForm" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
-                <label for="title" class="form-label" value="{{ old('title') }}">Title* :</label>
-                <input type="text" id="title" name="title"
+                <label for="title" class="form-label" >Title* :</label>
+                <input type="text" id="title" value="{{ old('title') }}" name="title"
                     class="form-control @error('title') border-danger @enderror">
                 @error('title')
                     <p class="text-danger">{{ $message }}</p>
@@ -83,8 +83,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="event_image" class="form-label" value="{{ old('event_image') }}">Upload Image* :</label>
-                <input type="file" id="event_image" name="event_image"
+                <label for="event_image" class="form-label" >Upload Image :</label>
+                <input type="file" id="event_image" value="{{ old('event_image') }}" name="event_image"
                     class="form-control @error('event_image') border-danger @enderror">
                 @error('event_image')
                     <p class="text-danger">{{ $message }}</p>
@@ -92,8 +92,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="date_end_event" class="form-label" value="{{ old('date_end_event') }}">Date de la fin D'evenement* :</label>
-                <input type="date" id="date_end_event" name="date_end_event"
+                <label for="date_end_event" class="form-label">Date of event end :</label>
+                <input type="date" id="date_end_event"  value="{{ old('date_end_event') }}" name="date_end_event"
                     class="form-control @error('date_end_event') border-danger @enderror">
                 @error('date_end_event')
                     <p class="text-danger">{{ $message }}</p>
