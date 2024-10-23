@@ -123,7 +123,7 @@ h1:hover {
     background-color: #011D70; /* Transparent background */
     cursor: pointer; /* Pointer cursor */
     transition: background 0.3s; /* Transition for hover effect */
-    border-radius: 10px;
+    border-radius: 15px;
 }
 .openbtn:hover {
     background-color: white; /* Hover effect */
@@ -289,7 +289,7 @@ a {
     position: relative;
     display: inline-block;
     outline: none;
-    border-radius: 20px;
+    border-radius: 15px;
     z-index: 0;
     background: white;
     overflow: hidden;
@@ -357,7 +357,7 @@ a {
     background-color: white;
     color: #011D70;
     border: 2px solid #011D70;
-    border-radius: 10px;
+    border-radius: 15px;
     font-weight: bold;
     font-size: 110%;
 }
@@ -370,7 +370,7 @@ a {
 
 /* services et activity */
 .services-activities {
-    background: linear-gradient(rgba(0, 203, 217, 0.5), rgba(0, 203, 217, 0.5));
+    background: linear-gradient(rgba(0, 203, 217, 0.5), rgba(0, 203, 217, 0.4));
         /* url("https://www.enna.dz/wp-content/uploads/2021/05/Services-ENNA.jpg") */
             /* no-repeat center center/cover; */
     background-position: center 10%;
@@ -451,7 +451,7 @@ h5 {
     width: 100px;
     height: 60px;
     background-color: rgb(255, 255, 255, 0.7);
-    border-radius: 20px;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;

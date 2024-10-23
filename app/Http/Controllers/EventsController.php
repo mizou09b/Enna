@@ -30,7 +30,7 @@ class EventsController extends Controller
         }
 
         Event::create($eventsData);
-        return redirect('homepage');
+        return redirect('/');
     }
 
      //to show events data from db in table:

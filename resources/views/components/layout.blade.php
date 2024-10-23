@@ -77,32 +77,38 @@
 
         <!-- layout Card -->
         @if ($showCard ?? true)
-            <div class="card position-absolute"
-                style="top: 130px; right: 40px; width: 20rem; box-shadow: 0 4px 8px rgba(220, 227, 244, 0.8); border-radius: 15px; overflow: hidden; border: 1px solid white">
-                @if ($events->isEmpty())
-                    <div class="alert alert-info text-center">Aucun événement trouvé.</div>
-                @else
-                    @foreach ($events as $event)
-                        @if ($event->event_image)
-                            <img src="{{ asset('storage/' . $event->event_image) }}"
+            @php
+                // Get the latest event
+                $latestEvent = $events->first();
+            @endphp
+
+            @if ($latestEvent && $latestEvent->date_end_event > now())
+                <div class="card position-absolute"
+                    style="top: 120px; right: 40px; width: 15rem; box-shadow: 0 4px 8px rgba(220, 227, 244, 0.8); border-radius: 15px; overflow: hidden; border: 1px solid white;">
+
+                    @if ($events->isEmpty())
+                        <div class="alert alert-info text-center">Aucun événement trouvé.</div>
+                    @else
+                        @if ($latestEvent->event_image)
+                            <img src="{{ asset('storage/' . $latestEvent->event_image) }}"
                                 style="width: 100%; height: auto; transition: transform 0.3s ease;"
                                 alt="Image de l'événement">
                         @endif
                         <div class="card-body" style="padding: 1rem;">
                             <h5 class="card-title"
                                 style="font-family: 'KacsTitle', sans-serif; font-weight: bold; margin-top: 0rem; margin-bottom: 0.5rem; color: #011D70;">
-                                {{ $event->title }}
+                                {{ $latestEvent->title }}
                             </h5>
                             <p class="card-text"
                                 style="font-family: 'Arial', sans-serif; font-size: 14px; line-height: 1.6; color: #6d8594;
-                                line-height: 130%; padding: 5px">
-                                {{ $event->observation }}
+                line-height: 130%; padding: 5px">
+                                {{ $latestEvent->observation }}
                             </p>
                             <a href="/eventsForm" class="read-more-btn"> Ajouter un Événement</a>
                         </div>
-                    @endforeach
-                @endif
-            </div>
+                    @endif
+                </div>
+            @endif
         @endif
 
         <!-- Sidebar Dropdown Menu -->

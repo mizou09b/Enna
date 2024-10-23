@@ -2,10 +2,20 @@
 
     <div class="containerLink">
         <div class="LinkBody">
-            <a href="/formulairOffre" class="linkClass">Formulair Offre</a>
+            <a href="/formulairOffre" class="linkClass">
+                <div class="linkContent">
+                    <i class="fa-solid fa-briefcase fa-2x"></i>
+                    <span>Formulair Offre</span>
+                </div>
+            </a>
         </div>
         <div class="LinkBody">
-            <a href="/eventsForm" class="linkClass">Formulair events</a>
+            <a href="/eventsForm" class="linkClass">
+                <div class="linkContent">
+                    <i class="fa-solid fa-calendar fa-2x"></i>
+                    <span>Formulair events</span>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -19,7 +29,7 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'  // Include CSRF token
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}' // Include CSRF token
                     }
                 });
 

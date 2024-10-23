@@ -42,7 +42,7 @@ tr:hover {
 }
 
 .btn {
-    margin: 10px;
+    margin: 0px 10px 5px 0px;
 }
 
 .btn a {
@@ -56,10 +56,6 @@ tr:hover {
     color: white;
 }
 
-.btn .btn-danger {
-    background-color: white;
-    border-color: white;
-}
 
 .alert {
     margin-bottom: 20px;
@@ -131,5 +127,16 @@ tr:hover td {
     color: #011D70;
     text-align: center;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
+}
+
+.linkContent {
+    display: flex;
+    flex-direction: column; /* Arrange icon and text vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text alignment */
+}
+
+.linkClass i {
+    margin-bottom: 10px; /* Space between icon and text */
 }

@@ -102,7 +102,8 @@
 
 
             <button type="submit" class="btn btn-primary">Confirmer</button>
-            <button type="button" class="btn btn-primary" onclick="ShowCard()">Show Card</button>
+            <a href="/" class="btn btn-info ms-2 text-decoration-none">Voir l'evenement</a>
+            <a href="/menuAdmin" class="btn btn-dark ms-2 text-decoration-none">Menu Admin</a>
             <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">Déconnecter</button>
         </form>
         <div class="container d-flex pb-4">

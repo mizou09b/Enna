@@ -118,8 +118,9 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Envoyer</button>
+            <button type="submit" class="btn btn-primary">Confimer</button>
             <a href="/offres" class="btn btn-info ms-2 text-decoration-none">Consulter les offres</a>
+            <a href="/menuAdmin" class="btn btn-dark ms-2 text-decoration-none">Menu Admin</a>
             <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">Déconnecter</button>
         </form>
         <div class="container d-flex pb-4">
