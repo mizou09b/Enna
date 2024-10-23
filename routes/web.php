@@ -18,12 +18,12 @@ Route::middleware(['LangTradMiddleware'])->group(function () {
     Route::post('/loginAdmin', [AdminController::class, 'adminLogin']);
     Route::view('/menuAdmin', 'menuAdmin')->middleware('auth');
     Route::post('/adminLogout', [AdminController::class, 'adminLogout']);
+    Route::get('/', [AdminController::class, 'ennaNumbersDataAndEVents']);
 
     //events routes:
     Route::get('/events', [EventsController::class, 'events']);
     Route::view('/eventsForm', 'eventsForm')->middleware('auth');
     Route::post('/eventsForm', [EventsController::class, 'eventsForm']);
-    Route::get('/', [EventsController::class, 'eventsData']);
     Route::get('/edit/event/{event}', [EventsController::class, 'edit_event'])->name('edit_event')->middleware('auth');
     Route::put('/edit/event/{event}', [EventsController::class, 'update_event'])->middleware('auth');
     Route::delete('/delete/event/{event}', [EventsController::class, 'delete_event'])->name('delete_event');
@@ -37,8 +37,9 @@ Route::middleware(['LangTradMiddleware'])->group(function () {
     Route::put('/edit/offre/{offre}', [OffresController::class, 'update_offre'])->middleware('auth');
     Route::delete('/delete/offre/{offre}', [OffresController::class, 'delete_offre'])->name('delete_offre');
 
-    // enne numbers routes :
-    Route::get('ennaNumbers', [AdminController::class, 'ennaNumbers'])->name('ennaNumbers');
+    // enna numbers routes :
+    Route::get('ennaNumbers', [AdminController::class, 'ennaNumbers'])->middleware('auth')->name('ennaNumbers');
+    Route::post('ennaNumbers', [AdminController::class, 'ennaNumbersForm'])->name('ennaNumbers');
 
     //Traduction route ::
     Route::get('lang/{lang}', [LangController::class, 'langTrad']);

@@ -61,46 +61,47 @@
 
     <div class="container mt-5">
         <h1 class="mb-4">Enna Numbers</h1>
-        <form action="/eventsForm" method="POST" enctype="multipart/form-data">
+        <form action="{{route('ennaNumbers')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <label for="Aérodromes Internationaux" class="form-label" value="{{ old('Aérodromes Internationaux') }}">Aérodromes Internationaux* :</label>
-                <input type="text" id="Aérodromes Internationaux" name="Aérodromes Internationaux"
-                    class="form-control @error('Aérodromes Internationaux') border-danger @enderror">
-                @error('Aérodromes Internationaux')
+                <label for="Aerodromes_Internationaux" class="form-label" >Aérodromes Internationaux* :</label>
+                <input type="text" id="Aerodromes_Internationaux" value="{{ old('Aerodromes_Internationaux') }}" name="Aerodromes_Internationaux"
+                    class="form-control @error('Aerodromes_Internationaux') border-danger @enderror">
+                @error('Aerodromes_Internationaux')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+
+
+            <div class="mb-3">
+                <label for="Aerodromes_Nationaux" class="form-label" >Aerodromes Nationaux* :</label>
+                <input type="text" id="Aerodromes_Nationaux" name="Aerodromes_Nationaux" value="{{ old('Aerodromes_Nationaux') }}"
+                 class="form-control @error('Aerodromes_Nationaux') border-danger @enderror">
+                @error('Aerodromes_Nationaux')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="Movements_Aerodromes" class="form-label" >Movements Aérodromes* :</label>
+                <input type="text" id="Movements_Aerodromes" name="Movements_Aerodromes" value="{{ old('Movements_Aerodromes') }}"
+                    class="form-control @error('Movements_Aerodromes') border-danger @enderror">
+                @error('Movements_Aerodromes')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="Survols" class="form-label" value="{{ old('Survols') }}">Survols* :</label>
-                <input type="text" id="Survols" name="Survols"
+                <label for="Survols" class="form-label" >Survols* :</label>
+                <input type="text" id="Survols" name="Survols" value="{{ old('Survols') }}"
                     class="form-control @error('Survols') border-danger @enderror">
                 @error('Survols')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
-            <div class="mb-3">
-                <label for="Aérodromes Nationaux" class="form-label" value="{{ old('Aérodromes Nationaux') }}">Aérodromes Nationaux* :</label>
-                <input type="text" id="Aérodromes Nationaux" name="Aérodromes Nationaux"
-                    class="form-control @error('Aérodromes Internationaux') border-danger @enderror">
-                @error('Aérodromes Nationaux')
-                    <p class="text-danger">{{ $message }}</p>
-                @enderror
-            </div>
-
-            <div class="mb-3">
-                <label for="Movements Aérodromes" class="form-label" value="{{ old('Movements Aérodromes') }}">Movements Aérodromes* :</label>
-                <input type="text" id="Movements Aérodromes" name="Movements Aérodromes"
-                    class="form-control @error('Movements Aérodromes') border-danger @enderror">
-                @error('Movements Aérodromes')
-                    <p class="text-danger">{{ $message }}</p>
-                @enderror
-            </div>
-
             <button type="submit" class="btn btn-primary">Confirm</button>
-            <a href="/events" class="btn btn-info ms-2 text-decoration-none">See event</a>
+            <a href="/" class="btn btn-info ms-2 text-decoration-none">See Numbers</a>
             <a href="/menuAdmin" class="btn btn-dark ms-2 text-decoration-none">Menu Admin</a>
             <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">Desconnect</button>
         </form>

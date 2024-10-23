@@ -39,14 +39,6 @@ class EventsController extends Controller
         return redirect('events');
     }
 
-    //to show events data from db in table:
-    public function eventsData()
-    {
-        // Get all events ordered by created_at in descending order
-        $events = Event::orderBy('created_at', 'desc')->get();
-        return view('homepage', compact('events'));
-    }
-
     public function events()
     {
         // Get all events ordered by created_at in descending order

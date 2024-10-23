@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\EnnaNumber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -49,5 +51,27 @@ class AdminController extends Controller
     public function ennaNumbers() {
         return view('ennaNumbers');
     }
+
+    public function ennaNumbersForm(Request $request) {
+
+        $ennaNumbers = $request->validate([
+            'Aerodromes_Internationaux' => 'numeric',
+            'Aerodromes_Nationaux' => 'numeric',
+            'Movements_Aerodromes' => 'numeric',
+            'Survols' => 'numeric'
+        ]);
+
+        $ennaNumbers['user_id'] = Auth::id();
+        EnnaNumber::create($ennaNumbers);
+        return redirect('/');
+    }
+
+    public function ennaNumbersDataAndEVents () {
+
+        $ennaNumbers = EnnaNumber::orderBy('created_at', 'desc')->get();
+         // Get all events ordered by created_at in descending order
+         $events = Event::orderBy('created_at', 'desc')->get();
+         return view('homepage', compact('events', 'ennaNumbers'));
+     }
 
 }

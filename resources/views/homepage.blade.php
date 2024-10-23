@@ -40,11 +40,20 @@
                         <div class="section-title ms-4 mb-5">
                             <h4 style="color:#4dabf7; font-size: 300%;" class="mb-3">Formation</h4>
                             {{-- <h4 style="color:#2F55D4; font-size: 25px;">Les principeaux missions de l'ENNA :</h4> --}}
-                            <p style="color: #011D70">Le Centre de Qualification, de Recyclage et d’Expérimentation de la Navigation  Aérienne, situé dans l’enceinte  du Complexe de la Navigation Aérienne de Oued Smar, est un Centre homologué par la Direction de l’Aéronautique  et de la Météorologie (DAM).
+                            <p style="color: #011D70">Le Centre de Qualification, de Recyclage et d’Expérimentation de
+                                la Navigation Aérienne, situé dans l’enceinte du Complexe de la Navigation Aérienne de
+                                Oued Smar, est un Centre homologué par la Direction de l’Aéronautique et de la
+                                Météorologie (DAM).
 
-                                Il prend en charge les formations de  qualification, de perfectionnement et de recyclage du personnel exploitant et technique de l’ENNA selon les exigences et les recommandations  OACI (l’Organisation de l’Aviation Civile Internationale). Les programmes de formations, et les examinateurs   exerçant dans ce centre sont  homologués par la DAM.
+                                Il prend en charge les formations de qualification, de perfectionnement et de recyclage
+                                du personnel exploitant et technique de l’ENNA selon les exigences et les
+                                recommandations OACI (l’Organisation de l’Aviation Civile Internationale). Les
+                                programmes de formations, et les examinateurs exerçant dans ce centre sont homologués
+                                par la DAM.
 
-                                Le CQRENA est un membre associé du programme Trainair Plus de l’OACI. Il  dispense des formations OACI, en faisant appel à des formateurs OACI, en classe virtuelle ou en présentiel.</p>
+                                Le CQRENA est un membre associé du programme Trainair Plus de l’OACI. Il dispense des
+                                formations OACI, en faisant appel à des formateurs OACI, en classe virtuelle ou en
+                                présentiel.</p>
                             <div class="aboutUsBtn">
                                 {{-- <a href="a-propos.html" class="btn btn_class ms-4 float-end">Autre Mission</a> --}}
                             </div>
@@ -106,42 +115,43 @@
 
     <h2 class="text-center pt-4 h2-styles">L'Enna en chiffre</h2>
     <hr class="w-25 mx-auto" style="border-top: 2px solid #2F55D4; opacity: 1">
+
     <section class="ennaEnChiffre">
 
         <a href="#" class="cardE education">
             <div class="overlay"></div>
             <div class="circle">
-                <i class="fa-solid fa-plane fa-3x"></i>
+                <i class="fa-solid fa-plane-departure"></i>
             </div>
             <p>Aérodromes Internationaux</p>
-            <div class="numbers-data">25</div>
+            <div class="numbers-data">{{ $ennaNumbers->first()->Aerodromes_Internationaux ?? 'N/A' }}</div>
         </a>
-
         <a href="#" class="cardE credentialing">
             <div class="overlay"></div>
             <div class="circle">
                 <i class="fa-solid fa-plane fa-3x"></i>
             </div>
             <p>Aérodromes Nationaux</p>
-            <div class="numbers-data">25</div>
+            <div class="numbers-data">{{ $ennaNumbers->first()->Aerodromes_Nationaux ?? 'N/A' }}</div>
         </a>
 
         <a href="#" class="cardE wallet">
             <div class="overlay"></div>
             <div class="circle">
-                <i class="fa-solid fa-plane fa-3x"></i>
+                <i class="fa-solid fa-tower-observation"></i>
             </div>
             <p>Movements Aérodromes </p>
-            <div class="numbers-data">25</div>
+            <div class="numbers-data">{{ $ennaNumbers->first()->Movements_Aerodromes ?? 'N/A' }}</div>
         </a>
 
         <a href="#" class="cardE human-resources">
             <div class="overlay"></div>
             <div class="circle">
-                <i class="fa-solid fa-plane fa-3x"></i>
+                <i class="fa-solid fa-globe"></i>
             </div>
             <p>Survols</p>
-            <div class="numbers-data">25</div>
+            <div class="numbers-data">{{ $ennaNumbers->first()->Survols ?? 'N/A' }}</div>
         </a>
     </section>
+
 </x-layout>
