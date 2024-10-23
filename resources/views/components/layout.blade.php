@@ -16,7 +16,6 @@
         <link rel="stylesheet" href="{{ asset($offresCss) }}">
     @endif
 
-
     {{-- icons links --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -46,7 +45,7 @@
                     <a href="#">{{ __('navbar.services') }}</a>
                     <a href="#">{{ __('navbar.activity') }}</a>
                     <a href="/offres">{{ __('navbar.offers') }}</a>
-                    {{-- <a href="/events">{{ __('navbar.events') }}</a> --}}
+                    <a href="/events">{{ __('navbar.events') }}</a>
                 </div>
                 <div class="search-container">
                     <span class="search-icon" onclick="toggleSearch()" aria-label="Ouvrir la recherche"> <i
@@ -64,18 +63,16 @@
                         <a href="#">{{ __('navbar.services') }}</a>
                         <a href="#">{{ __('navbar.activity') }}</a>
                         <a href="/offres">{{ __('navbar.offers') }}</a>
-                        {{-- <a href="/events">{{ __('navbar.events') }}</a> --}}
+                        <a href="/events">{{ __('navbar.events') }}</a>
                     </div>
                 </nav>
             </nav>
 
+            <!-- layout Card -->
             @if ($showHeader ?? true)
                 <h1 class="display-4 pt-5 ps-3 mt-2"> {!! __('navbar.bg-header') !!}</h1>
             @endif
-
         </div>
-
-        <!-- layout Card -->
         @if ($showCard ?? true)
             @php
                 // Get the latest event
@@ -102,9 +99,9 @@
                             <p class="card-text"
                                 style="font-family: 'Arial', sans-serif; font-size: 14px; line-height: 1.6; color: #6d8594;
                 line-height: 130%; padding: 5px">
-                                {{ $latestEvent->observation }}
+                                {{ \Illuminate\Support\Str::limit($latestEvent->observation, 200, '...') }}
                             </p>
-                            <a href="/eventsForm" class="read-more-btn"> Ajouter un Événement</a>
+                            <a href="/events" class="read-more-btn"> Check the Event</a>
                         </div>
                     @endif
                 </div>
@@ -182,7 +179,7 @@
     {{ $slot }}
 
     {{-- footer begins here! --}}
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-4 ">
         <div class="container text-center">
             <h5>Suivez-nous sur les réseaux sociaux</h5>
             <div class="social-icons mb-3">

@@ -56,7 +56,7 @@
             @csrf
             @method('PUT')
             <div class="mb-3">
-                <label for="numero" class="form-label">Numéro :</label>
+                <label for="numero" class="form-label" value="{{ $offre->numero }}">Numéro :</label>
                 <input type="text" id="numero" name="numero"
                     class="form-control @error('numero') border-danger @enderror" value="{{ $offre->numero }}">
                 @error('numero')
@@ -65,9 +65,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="objet" class="form-label" value="{{ $offre->objet }}">Objet :</label>
-                <input type="text" id="objet" name="objet"
-                    class="form-control @error('objet') border-danger @enderror">
+                <label for="objet" class="form-label" >Objet :</label>
+                <input type="text" id="objet" value="{{ $offre->objet }}" name="objet"  class="form-control @error('objet') border-danger @enderror">
                 @error('objet')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror

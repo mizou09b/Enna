@@ -60,46 +60,44 @@
     @endif
 
     <div class="container mt-5">
-        <h1 class="mb-4">Ajouter un evenement</h1>
+        <h1 class="mb-4">Enna Numbers</h1>
         <form action="/eventsForm" method="POST" enctype="multipart/form-data">
             @csrf
-
             <div class="mb-3">
-                <label for="title" class="form-label" value="{{ old('title') }}">Title* :</label>
-                <input type="text" id="title" name="title"
-                    class="form-control @error('title') border-danger @enderror">
-                @error('title')
+                <label for="Aérodromes Internationaux" class="form-label" value="{{ old('Aérodromes Internationaux') }}">Aérodromes Internationaux* :</label>
+                <input type="text" id="Aérodromes Internationaux" name="Aérodromes Internationaux"
+                    class="form-control @error('Aérodromes Internationaux') border-danger @enderror">
+                @error('Aérodromes Internationaux')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="observation" class="form-label">Observation :</label>
-                <textarea id="observation" name="observation" class="form-control @error('observation') border-danger @enderror "
-                    rows="4" cols="50">{{ old('observation') }}</textarea>
-                @error('observation')
+                <label for="Survols" class="form-label" value="{{ old('Survols') }}">Survols* :</label>
+                <input type="text" id="Survols" name="Survols"
+                    class="form-control @error('Survols') border-danger @enderror">
+                @error('Survols')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="event_image" class="form-label" value="{{ old('event_image') }}">Upload Image* :</label>
-                <input type="file" id="event_image" name="event_image"
-                    class="form-control @error('event_image') border-danger @enderror">
-                @error('event_image')
+                <label for="Aérodromes Nationaux" class="form-label" value="{{ old('Aérodromes Nationaux') }}">Aérodromes Nationaux* :</label>
+                <input type="text" id="Aérodromes Nationaux" name="Aérodromes Nationaux"
+                    class="form-control @error('Aérodromes Internationaux') border-danger @enderror">
+                @error('Aérodromes Nationaux')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="date_end_event" class="form-label" value="{{ old('date_end_event') }}">Date de la fin D'evenement* :</label>
-                <input type="date" id="date_end_event" name="date_end_event"
-                    class="form-control @error('date_end_event') border-danger @enderror">
-                @error('date_end_event')
+                <label for="Movements Aérodromes" class="form-label" value="{{ old('Movements Aérodromes') }}">Movements Aérodromes* :</label>
+                <input type="text" id="Movements Aérodromes" name="Movements Aérodromes"
+                    class="form-control @error('Movements Aérodromes') border-danger @enderror">
+                @error('Movements Aérodromes')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
-
 
             <button type="submit" class="btn btn-primary">Confirm</button>
             <a href="/events" class="btn btn-info ms-2 text-decoration-none">See event</a>

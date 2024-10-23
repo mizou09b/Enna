@@ -5,15 +5,25 @@
             <a href="/formulairOffre" class="linkClass">
                 <div class="linkContent">
                     <i class="fa-solid fa-briefcase fa-2x"></i>
-                    <span>Formulair Offre</span>
+                    <span>Form Offre</span>
                 </div>
             </a>
         </div>
+
         <div class="LinkBody">
             <a href="/eventsForm" class="linkClass">
                 <div class="linkContent">
                     <i class="fa-solid fa-calendar fa-2x"></i>
-                    <span>Formulair events</span>
+                    <span>Form events</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="LinkBody">
+            <a href="/ennaNumbers" class="linkClass">
+                <div class="linkContent">
+                    <i class="fa-solid fa-arrow-trend-up fa-2x"></i>
+                    <span>ENNA Numbers</span>
                 </div>
             </a>
         </div>

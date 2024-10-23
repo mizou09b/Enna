@@ -87,7 +87,7 @@ class OffresController extends Controller
         return redirect('offres')->with('success', "Offre editer avec succes");
     }
 
-    //delete function :
+    //delete Offer :
     public function delete_offre(Offre $offre)
     {
         $offre->delete();

@@ -46,4 +46,8 @@ class AdminController extends Controller
         return view('compte');
     }
 
+    public function ennaNumbers() {
+        return view('ennaNumbers');
+    }
+
 }

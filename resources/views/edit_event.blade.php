@@ -60,13 +60,13 @@
     @endif
 
     <div class="container mt-5">
-        <h1 class="mb-4">Ajouter un evenement</h1>
-        <form action="/eventsForm" method="POST" enctype="multipart/form-data">
+        <h1 class="mb-4">Edit Event</h1>
+        <form action="{{ route('edit_event', $event->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
-
+            @method('PUT')
             <div class="mb-3">
-                <label for="title" class="form-label" value="{{ old('title') }}">Title* :</label>
-                <input type="text" id="title" name="title"
+                <label for="title" class="form-label">Title* :</label>
+                <input type="text" id="title" name="title" value="{{ old('title') }}"
                     class="form-control @error('title') border-danger @enderror">
                 @error('title')
                     <p class="text-danger">{{ $message }}</p>
@@ -83,53 +83,31 @@
             </div>
 
             <div class="mb-3">
-                <label for="event_image" class="form-label" value="{{ old('event_image') }}">Upload Image* :</label>
-                <input type="file" id="event_image" name="event_image"
-                    class="form-control @error('event_image') border-danger @enderror">
+                <label for="event_image" class="form-label" >Upload Image* :</label>
+                <input type="file" id="event_image" name="event_image" value="{{ old('event_image') }}" class="form-control @error('event_image') border-danger @enderror">
                 @error('event_image')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="date_end_event" class="form-label" value="{{ old('date_end_event') }}">Date de la fin D'evenement* :</label>
-                <input type="date" id="date_end_event" name="date_end_event"
-                    class="form-control @error('date_end_event') border-danger @enderror">
+                <label for="date_end_event" class="form-label">Date of event end* :</label>
+                <input type="date" id="date_end_event" name="date_end_event"  value="{{ old('date_end_event') }}" class="form-control @error('date_end_event') border-danger @enderror">
                 @error('date_end_event')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
-
-            <button type="submit" class="btn btn-primary">Confirm</button>
-            <a href="/events" class="btn btn-info ms-2 text-decoration-none">See event</a>
+            <button type="submit" class="btn btn-primary">Confirm Edit</button>
+            <a href="/" class="btn btn-info ms-2 text-decoration-none">See the event</a>
             <a href="/menuAdmin" class="btn btn-dark ms-2 text-decoration-none">Menu Admin</a>
-            <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">Desconnect</button>
+            <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">Deconnect</button>
         </form>
         <div class="container d-flex pb-4">
-
         </div>
     </div>
 
-    <script>
-        async function confirmLogout() {
 
-            if (confirm("Êtes-vous sûr de vouloir vous déconnecter ?")) {
-                const response = await fetch('/adminLogout', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'  // Include CSRF token
-                    }
-                });
-
-                if (response.ok) {
-                    // Redirect to the login page or wherever you want after logout
-                    window.location.href = '/';
-                }
-            }
-        }
-    </script>
 
     </div>
     </div>
