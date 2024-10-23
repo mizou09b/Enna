@@ -11,7 +11,6 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     {{-- css styles links --}}
-
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
     @if (isset($offresCss))
         <link rel="stylesheet" href="{{ asset($offresCss) }}">
@@ -39,14 +38,15 @@
             <nav class="main-navbar">
                 <div class="logo">
                     <img src="https://www.enna.dz/wp-content/themes/enna/assets/images/logo-ENNA.png"
-                        alt="Logo de l'ENNA - École Nationale de Navigation et d'Aéronautique">
+                        alt="Logo de l'ENNA - École Nationale de Navigation et d'Aéronautique" height="50">
                 </div>
                 <div class="nav-links">
                     <a href="/"><i class="fa-solid fa-house"></i></a>
-                        <a href="/about">{{ __('navbar.about')}}</a>
-                        <a href="#">{{ __('navbar.services') }}</a>
-                        <a href="#">{{ __('navbar.activity') }}</a>
-                        <a href="/offres">{{ __('navbar.offers') }}</a>
+                    <a href="/about">{{ __('navbar.about') }}</a>
+                    <a href="#">{{ __('navbar.services') }}</a>
+                    <a href="#">{{ __('navbar.activity') }}</a>
+                    <a href="/offres">{{ __('navbar.offers') }}</a>
+                    {{-- <a href="/events">{{ __('navbar.events') }}</a> --}}
                 </div>
                 <div class="search-container">
                     <span class="search-icon" onclick="toggleSearch()" aria-label="Ouvrir la recherche"> <i
@@ -60,16 +60,17 @@
                         <div class="logo">
                         </div>
                         <a href="/"><i class="fa-solid fa-house"></i></a>
-                        <a href="/about">{{ __('navbar.about')}}</a>
+                        <a href="/about">{{ __('navbar.about') }}</a>
                         <a href="#">{{ __('navbar.services') }}</a>
                         <a href="#">{{ __('navbar.activity') }}</a>
                         <a href="/offres">{{ __('navbar.offers') }}</a>
+                        {{-- <a href="/events">{{ __('navbar.events') }}</a> --}}
                     </div>
                 </nav>
             </nav>
 
             @if ($showHeader ?? true)
-                <h1 class="display-4 pt-5 ps-3 mt-2"> {!!__('navbar.bg-header')!!}</h1>
+                <h1 class="display-4 pt-5 ps-3 mt-2"> {!! __('navbar.bg-header') !!}</h1>
             @endif
 
         </div>
@@ -78,21 +79,29 @@
         @if ($showCard ?? true)
             <div class="card position-absolute"
                 style="top: 130px; right: 40px; width: 20rem; box-shadow: 0 4px 8px rgba(220, 227, 244, 0.8); border-radius: 15px; overflow: hidden; border: 1px solid white">
-                <img src="https://feji.us/k4xc9i" class="card-img-top" alt="Card Image"
-                    style="width: 100%; height: auto; transition: transform 0.3s ease;">
-                <div class="card-body" style="padding: 1rem;">
-                    <h5 class="card-title"
-                        style="font-family: 'KacsTitle', sans-serif; font-weight: bold; margin-top: 0rem; margin-bottom: 0.5rem; color: #011D70;">
-                        Qui sommes-nous</h5>
-                    <p class="card-text"
-                        style="font-family: 'Arial', sans-serif; font-size: 14px; line-height: 1.6; color: #6d8594;
-                 line-height: 130%; padding: 5px">
-                        L’ENNA Il a pour mission d’assurer le service public de la sécurité de la navigation aérienne
-                        dans
-                        l’espace ...
-                    </p>
-                    <a href="#" class="read-more-btn">Lire la suite</a>
-                </div>
+                @if ($events->isEmpty())
+                    <div class="alert alert-info text-center">Aucun événement trouvé.</div>
+                @else
+                    @foreach ($events as $event)
+                        @if ($event->event_image)
+                            <img src="{{ asset('storage/' . $event->event_image) }}"
+                                style="width: 100%; height: auto; transition: transform 0.3s ease;"
+                                alt="Image de l'événement">
+                        @endif
+                        <div class="card-body" style="padding: 1rem;">
+                            <h5 class="card-title"
+                                style="font-family: 'KacsTitle', sans-serif; font-weight: bold; margin-top: 0rem; margin-bottom: 0.5rem; color: #011D70;">
+                                {{ $event->title }}
+                            </h5>
+                            <p class="card-text"
+                                style="font-family: 'Arial', sans-serif; font-size: 14px; line-height: 1.6; color: #6d8594;
+                                line-height: 130%; padding: 5px">
+                                {{ $event->observation }}
+                            </p>
+                            <a href="/eventsForm" class="read-more-btn"> Ajouter un Événement</a>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         @endif
 

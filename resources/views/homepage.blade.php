@@ -1,4 +1,4 @@
-<x-layout >
+<x-layout :events="$events">
 
     <!-- About Us Section -->
     <section class="company-description">

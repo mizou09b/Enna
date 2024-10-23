@@ -88,7 +88,7 @@ h1:hover {
 .none {
     background: #011D70 no-repeat center center/cover;
     position: relative;
-    height: 50vh;
+    height: 38vh;
     background-position: center top;
     border-bottom-left-radius: 50% 20px;
     border-bottom-right-radius: 50% 20px;
@@ -146,6 +146,7 @@ h1:hover {
     left: 0;
     right: 0;
     z-index: 1000;
+    visibility: hidden;
     transition: opacity 0.5s ease;
 }
 
@@ -168,6 +169,7 @@ a {
 .fade-navbar.show {
     opacity: 0.8; /* Make it fully visible when it has 'show' class */
     width: 100%;
+    visibility: visible;
 }
 
 /* Ensure main navbar does not hide */
@@ -175,10 +177,7 @@ a {
     opacity: 0; /* Hide the fade navbar when it's not shown */
     width: 0;
     transition: none;
-}
-
-.logo img {
-    height: 50px;
+    visibility: hidden;
 }
 
 .nav-links {

@@ -1,4 +1,4 @@
-<x-layout :showCard='false' offresCss='css/styleOffres.css' aboutBg='none' :showHeader='false'>
+<x-layout :showCard='false' offresCss='css/styleAdminPages.css' aboutBg='none' :showHeader='false'>
 
     @if (session()->has('success'))
         <div class="container container-narrow mt-3">

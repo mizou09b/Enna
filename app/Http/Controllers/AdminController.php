@@ -22,7 +22,7 @@ class AdminController extends Controller
 
         $request->session()->regenerate();
         if (Auth::attempt(['username' => $adminData['username'], 'password' => $adminData['password']])) {
-            return redirect('formulairOffre')->with('success', 'You are logged in.');
+            return redirect('menuAdmin')->with('success', 'You are logged in.');
         } else {
             return redirect('loginAdmin')->with('error', 'You are not an admin!');
             /* return back()->withErrors([

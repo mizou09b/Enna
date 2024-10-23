@@ -4,19 +4,25 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LangController;
 use App\Http\Controllers\OffresController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventsController;
 
 
 Route::middleware(['LangTradMiddleware'])->group(function () {
 
     //  User routes :
-    Route::view('/', 'homepage');/*->name('homepage') and use {{route('homepage')}}; */
-    Route::get('/about', [UserController::class, 'about']);
+    // Route::view('/', 'homepage');/*->name('homepage') and use {{route('homepage')}}; */
+    Route::view('/about', 'about');
 
     //Admin routes :
     Route::view('/loginAdmin', 'admin')->name('login');
     Route::post('/loginAdmin', [AdminController::class, 'adminLogin']);
+    Route::view('/menuAdmin', 'menuAdmin')->middleware('auth');
     Route::post('/adminLogout', [AdminController::class, 'adminLogout']);
+
+    //events routes:
+    Route::view('/eventsForm', 'eventsForm')->middleware('auth');
+    Route::post('/eventsForm', [EventsController::class, 'eventsForm']);
+    Route::get('/', [EventsController::class, 'events']);
 
     //offres routes :
     Route::get('/offres', [OffresController::class, 'offres']);
@@ -29,5 +35,5 @@ Route::middleware(['LangTradMiddleware'])->group(function () {
 
     //Traduction route ::
     Route::get('lang/{lang}', [LangController::class, 'langTrad']);
-    
+
 });
