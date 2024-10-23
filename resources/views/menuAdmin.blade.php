@@ -5,7 +5,7 @@
             <a href="/formulairOffre" class="linkClass">
                 <div class="linkContent">
                     <i class="fa-solid fa-briefcase fa-2x"></i>
-                    <span>Form Offre</span>
+                    <span>Form Offer</span>
                 </div>
             </a>
         </div>
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">Déconnecter</button>
+    <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">Desconnect</button>
 
     <script>
         async function confirmLogout() {

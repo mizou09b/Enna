@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('offres', function (Blueprint $table) {
             $table->id();
             $table->string('numero');
-            $table->string('objet');
+            $table->string('objetEn');
+            $table->string('objetAr');
             $table->date('date_Limite');
             $table->date('date_proroge')->nullable();
             $table->longText('observation')->nullable();

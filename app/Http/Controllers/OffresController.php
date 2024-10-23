@@ -16,7 +16,8 @@ class OffresController extends Controller
 
         $offresData = $request->validate([
             'numero' => 'required',
-            'objet' => 'required',
+            'objetEn' => 'required',
+            'objetAr' => 'required',
             'date_Limite' => ['required', 'date','after_or_equal:today'],
             'date_proroge' => ['nullable','date', 'after_or_equal:date_Limite'],
             'pdf' => ['nullable', 'file', 'mimes:pdf'],
@@ -24,7 +25,8 @@ class OffresController extends Controller
         ]);
 
         $offresData['numero'] = strip_tags($offresData['numero']);
-        $offresData['objet'] = strip_tags($offresData['objet']);
+        $offresData['objetEn'] = strip_tags($offresData['objetEn']);
+        $offresData['objetAr'] = strip_tags($offresData['objetAr']);
         $offresData['observation'] = strip_tags($offresData['observation']);
         $offresData['user_id'] = Auth::id();
 
@@ -76,7 +78,8 @@ class OffresController extends Controller
     {
         $validation_offre = $request->validate([
             'numero' => 'required',
-            'objet' => 'required',
+            'objetEn' => 'required',
+            'objetAr' => 'required',
             'date_Limite' => 'required|date',
             'date_proroge' => 'nullable|date',
             'pdf' => ['nullable', 'file', 'mimes:pdf'],

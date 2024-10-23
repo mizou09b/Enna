@@ -29,7 +29,7 @@
                         <tr>
                             <th>N˚</th>
                             <th>Référence</th>
-                            <th>Objet</th>
+                            <th>{{ __('navbar.objet') }}*</th>
                             <th>Date limite</th>
                             <th>Date proroge</th>
                             <th>pdf</th>
@@ -45,7 +45,13 @@
                             <tr>
                                 <td>{{ $ide }}</td>
                                 <td>{{ $offre->numero }}</td>
-                                <td>{{ $offre->objet }}</td>
+                                <td>
+                                    @if (app()->getLocale() === 'en')
+                                        {{ $offre->objetEn }}
+                                    @elseif (app()->getLocale() === 'ar')
+                                        {{ $offre->objetAr }}
+                                    @endif
+                                </td>
                                 <td>{{ $offre->date_Limite }}</td>
                                 <td>{{ $offre->date_proroge }}</td>
                                 <td>
@@ -68,7 +74,7 @@
                                 </td>
                             </tr>
                             @php
-                                $ide += 1;
+                                $ide + 1;
                             @endphp
                         @endforeach
                     </tbody>
@@ -100,7 +106,7 @@
                         <tr>
                             <th>N˚</th>
                             <th>Référence</th>
-                            <th>Objet</th>
+                            <th>{{ __('navbar.objet') }}*</th>
                             <th>Date limite</th>
                             <th>Date proroge</th>
                             <th>Pdf</th>
@@ -115,7 +121,15 @@
                             <tr>
                                 <td>{{ $ide }}</td>
                                 <td>{{ $offre->numero }}</td>
-                                <td>{{ $offre->objet }}</td>
+                                <td>
+                                    @if (app()->getLocale() === 'en')
+                                        {{ $offre->objetEn }}
+                                    @elseif (app()->getLocale() === 'ar')
+                                        {{ $offre->objetAr }}
+                                    @endif
+                                </td>
+
+                                </td>
                                 <td>{{ $offre->date_Limite }}</td>
                                 <td>{{ $offre->date_proroge }}</td>
                                 <td>

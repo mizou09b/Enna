@@ -73,10 +73,19 @@
             </div>
 
             <div class="mb-3">
-                <label for="objet" class="form-label" value="{{ old('objet') }}">Objet* :</label>
-                <input type="text" id="objet" name="objet"
-                    class="form-control @error('objet') border-danger @enderror">
-                @error('objet')
+                <label for="objetEn" class="form-label" value="{{ old('objetEn') }}">Objet in English* :</label>
+                <input type="text" id="objetEn" name="objetEn"
+                    class="form-control @error('objetEn') border-danger @enderror">
+                @error('objetEn')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="objetAr" class="form-label" value="{{ old('objetAr') }}">الموضوع* :</label>
+                <input type="text" id="objetAr" name="objetAr"
+                    class="form-control @error('objetAr') border-danger @enderror">
+                @error('objetAr')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
