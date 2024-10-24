@@ -41,12 +41,32 @@
                 </div>
                 <div class="nav-links">
                     <a href="/"><i class="fa-solid fa-house"></i></a>
-                    <a href="/about">{{ __('navbar.about') }}</a>
+                    <div class="dropdown navlinks">
+                        <a href="about" aria-expanded="false">
+                            {{ __('navbar.about') }}
+                        </a>
+                        <ul class="dropdown-menu navlinks">
+                            <li><a class="dropdown-item navlinks" href="#">Qui sommes nous</a></li>
+                            <li><a class="dropdown-item navlinks" href="#">Mission</a></li>
+                            <li><a class="dropdown-item navlinks" href="#">Organisation</a></li>
+                            <li><a class="dropdown-item navlinks" href="#">personnel</a></li>
+                            <li><a class="dropdown-item navlinks" href="#">Textes reglumentaire</a></li>
+                            <li><a class="dropdown-item navlinks" href="#">Aerodromes geree</a></li>
+                            <li><a class="dropdown-item navlinks" aria-expanded="false" href="#">Statistique</a>
+                                <ul class="dropdown-menu navlinks">
+                                    <li><a class="dropdown-item navlinks" href="#">Qui sommes nous</a></li>
+                                    <li><a class="dropdown-item navlinks" href="#">Mission</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                     <a href="#">{{ __('navbar.services') }}</a>
                     <a href="#">{{ __('navbar.activity') }}</a>
                     <a href="/offres">{{ __('navbar.offers') }}</a>
                     <a href="/events">{{ __('navbar.events') }}</a>
                 </div>
+
+
                 <div class="search-container">
                     <span class="search-icon" onclick="toggleSearch()" aria-label="Ouvrir la recherche"> <i
                             class="fa-solid fa-magnifying-glass fa-beat"></i></span>
@@ -98,7 +118,7 @@
                             </h5>
                             <p class="card-text"
                                 style="font-family: 'Arial', sans-serif; font-size: 14px; line-height: 1.6; color: #6d8594;
-                line-height: 130%; padding: 5px">
+                                line-height: 130%; padding: 5px">
                                 {{ \Illuminate\Support\Str::limit($latestEvent->observation, 200, '...') }}
                             </p>
                             <a href="/events" class="read-more-btn"> Check the Event</a>
@@ -110,14 +130,14 @@
 
         <!-- Sidebar Dropdown Menu -->
         <aside class="open-moteur">
-            <button class="openbtn " type="button" id="languageDropdown" data-bs-toggle="dropdown"
+            <button class="openbtn lang" type="button" id="languageDropdown" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <span class="wording">Langues</span>
+                <span class="wording">{{ __('headers.langues') }}</span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="languageDropdown" style="left: -100px;">
+            <ul class="dropdown-menu lang" aria-labelledby="languageDropdown">
                 <!-- Position the dropdown to the left -->
-                <li><a class="dropdown-item" href="/lang/en">English</a></li>
-                <li><a class="dropdown-item" href="/lang/ar">Arabe</a></li>
+                <li><a class="dropdown-item lang" href="/lang/en">English</a></li>
+                <li><a class="dropdown-item lang" href="/lang/ar">عربي</a></li>
             </ul>
         </aside>
 

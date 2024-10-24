@@ -8,5 +8,4 @@ return [
     'offers' => "العروض",
     'events' => "الأحداث",
     'bg-header' => "المؤسسة الوطنية <br><span class='indented-text'> للملاحة الجوية </span>",
-    'objet' => "الموضوع"
 ];

@@ -106,36 +106,95 @@ h1:hover {
 }
 
 
+/* sublinks navbar css */
+.navlinks.dropdown:hover > .dropdown-menu {
+    display: block;
+    border-radius: 10px;
+}
+
+.navlinks.dropdown-item {
+    color: black;
+    font-size: medium;
+    padding: 5px 15px;
+    margin: 0;
+}
+
+.navlinks.dropdown-item:hover {
+    text-shadow: none !important;
+    color: #2F55D4;
+    border-radius: 10px;
+}
+
+/* Second dropdown menu styling */
+.navlinks li:hover > .dropdown-menu {
+    display: block; /* Show submenu on hover */
+    top: 80%;
+    right: 100%; /* Align to the right of the parent */
+    border-radius: 10px;
+    z-index: 1000; /* Keep it above other elements */
+}
+
+/* Add an arrow to the Statistique dropdown */
+.navlinks li > a[aria-expanded="false"]::after {
+    content: '\25C0'; /* Unicode for right-pointing triangle */
+    margin-left: 40px; /* Space between text and arrow */
+    font-size: 0.8em; /* Adjust size as needed */
+    color: #2F55D4; /* Arrow color */
+}
+
+/* When hovering over the parent, change arrow color */
+.navlinks li:hover > a::after {
+    color: #011D70; /* Change the arrow color on hover */
+}
+
+
 /* vertical dropdown menu for langs */
 .open-moteur {
-    position: fixed; /* Fix to the side of the screen */
-    top: 15%; /* Adjust as needed */
-    left: 0; /* Stuck to the left */
-    /* background-color: #007bff; */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
-    z-index: 1030; /* Ensure it stays on top */
+    position: fixed;
+    top: 20%;
+    left: 0px;
+    z-index: 1030;
+    padding: 0px;
+    margin: 0px;
 }
+
 .openbtn {
-    display: block; /* Block for stacking */
-    padding: 8px;
-    text-align: center; /* Center the text */
+    display: block;
+    margin-left: 1px;
+    padding: 15px 5px 10px 6px;
+    text-align: center;
     border: none;
-    background-color: #011D70; /* Transparent background */
-    cursor: pointer; /* Pointer cursor */
+    background-color: #011D70;
+    cursor: pointer;
     transition: background 0.3s; /* Transition for hover effect */
     border-radius: 15px;
 }
+
 .openbtn:hover {
-    background-color: white; /* Hover effect */
+    background-color: black;
 }
+
 .wording {
+    font-weight: bold;
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     color: white;
 }
 
-.dropdown-menu {
-    padding: 0px;
+.lang.dropdown-menu {
+    border-radius: 15px;
+    background-color: white;
+    width: 100%;
+}
+
+.lang.dropdown-item {
+    color: #011D70;
+}
+
+.rotate-btn {
+    transform: rotate(90deg); /* Rotate the button by 90 degrees */
+    margin-left: 30px;
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 
 /* Show sticky navbar when scrolling down */
@@ -163,7 +222,7 @@ a {
 
 .fade-navbar .nav-links a {
     color: white; /* Make text black when the fade navbar appears */
-    margin: 0 15px; /* Add some margin */
+    margin: 0 10px; /* Add some margin */
 }
 
 .fade-navbar.show {
@@ -182,7 +241,7 @@ a {
 
 .nav-links {
     display: flex;
-    gap: 45px;
+    gap: 40px;
     padding-top: 10px;
 }
 
@@ -204,6 +263,8 @@ a {
     text-shadow: 0 0 10px #ffff, 0 0 20px #ffff, 0 0 50px #ffff;
 }
 
+
+/* search button css */
 .search-container {
     position: relative;
     display: flex;
@@ -385,7 +446,7 @@ a {
 .slider {
     width: 100%;
     border: 2px solid white;
-    height: 310px;
+    height: 320px;
     overflow: hidden;
     border-radius: 10px;
     mask-image: linear-gradient(
@@ -404,8 +465,8 @@ a {
 }
 
 .item {
-    height: 270px;
-    width: 250px;
+    height: 260px;
+    width: 240px;
     position: absolute;
     left: 100%;
     animation: autoRun 10s linear infinite;

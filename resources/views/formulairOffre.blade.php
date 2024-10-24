@@ -60,11 +60,11 @@
     @endif
 
     <div class="container mt-5">
-        <h1 class="mb-4">Ajouter une offre</h1>
+        <h1 class="mb-4">{{__('headers.editOffers')}}</h1>
         <form action="/offres" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <label for="numero" class="form-label">Numéro* :</label>
+                <label for="numero" class="form-label">{{__('headers.number')}} :</label>
                 <input type="text" id="numero" name="numero"
                     class="form-control @error('numero') border-danger @enderror" value="{{ old('numero') }}">
                 @error('numero')
@@ -73,7 +73,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="objetEn" class="form-label">Objet in English* :</label>
+                <label for="objetEn" class="form-label">Objet in English :</label>
                 <input type="text" id="objetEn" name="objetEn"
                     class="form-control @error('objetEn') border-danger @enderror" value="{{ old('objetEn') }}">
                 @error('objetEn')
@@ -82,7 +82,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="objetAr" class="form-label">الموضوع* :</label>
+                <label for="objetAr" class="form-label">الموضوع :</label>
                 <input type="text" id="objetAr" name="objetAr"
                     class="form-control @error('objetAr') border-danger @enderror" value="{{ old('objetAr') }}">
                 @error('objetAr')
@@ -91,7 +91,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="date_Limite" class="form-label">Date limite* :</label>
+                <label for="date_Limite" class="form-label">{{__('tables.date_limite')}} :</label>
                 <input type="date" id="date_Limite" name="date_Limite"
                     class="form-control @error('date_Limite') border-danger @enderror" value="{{ old('date_Limite') }}">
                 @error('date_Limite')
@@ -100,7 +100,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="proroge" class="form-label">Prorogé au :</label>
+                <label for="proroge" class="form-label">{{__('tables.date_proroge')}} :</label>
                 <input type="date" id="date_proroge" name="date_proroge"
                     class="form-control @error('date_proroge') border-danger @enderror" value="{{ old('date_proroge') }}">
                 @error('date_proroge')
@@ -109,7 +109,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="pdf" class="form-label">Upload PDF:</label>
+                <label for="pdf" class="form-label">{{__('headers.upload')}} PDF:</label>
                 <input type="file" name="pdf" id="pdf"
                     class="form-control @error('pdf') border-danger @enderror" accept="application/pdf">
                 @error('pdf')
@@ -118,7 +118,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="observation" class="form-label">Observation :</label>
+                <label for="observation" class="form-label">{{__('tables.observation')}} :</label>
                 <textarea id="observation" name="observation" class="form-control @error('observation') border-danger @enderror"
                     rows="4" cols="50">{{ old('observation') }}</textarea>
                 @error('observation')
@@ -126,10 +126,10 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Confirmer</button>
-            <a href="/offres" class="btn btn-info ms-2 text-decoration-none">Consulter les offres</a>
-            <a href="/menuAdmin" class="btn btn-dark ms-2 text-decoration-none">Menu Admin</a>
-            <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">Déconnecter</button>
+            <button type="submit" class="btn btn-primary">{{__('buttons.confirm')}}</button>
+            <a href="/offres" class="btn btn-info ms-2 text-decoration-none">{{__('buttons.consulter')}}</a>
+            <a href="/menuAdmin" class="btn btn-dark ms-2 text-decoration-none">{{__('buttons.menuAdmin')}}</a>
+            <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">{{__('buttons.desconnect')}}</button>
         </form>
     </div>
 

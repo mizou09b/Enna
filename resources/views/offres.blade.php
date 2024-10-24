@@ -21,20 +21,20 @@
         <section class="table-section">
             <h1 class="header1"
                 style="background-color: #011D70; color: white; padding: 15px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
-                Gerer les offres
+                {{ __('headers.manageOffers') }}
             </h1>
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr>
                             <th>N˚</th>
-                            <th>Référence</th>
-                            <th>{{ __('navbar.objet') }}*</th>
-                            <th>Date limite</th>
-                            <th>Date proroge</th>
+                            <th>{{ __('tables.reference') }}</th>
+                            <th>{{ __('tables.objet') }}</th>
+                            <th>{{__('tables.date_limite')}}</th>
+                            <th>{{ __('tables.date_proroge') }}</th>
                             <th>pdf</th>
-                            <th>Observation</th>
-                            <th>Actions</th>
+                            <th>{{ __('tables.observation') }}</th>
+                            <th>{{ __('tables.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,12 +64,12 @@
                                 </td>
                                 <td>{{ $offre->observation }}</td>
                                 <td class="text-center">
-                                    <a href="{{ route('edit_offre', $offre->id) }}" class="btn btn-info">Modifier</a>
+                                    <a href="{{ route('edit_offre', $offre->id) }}" class="btn btn-info">{{__('buttons.modify')}}</a>
                                     <form method="POST" action="{{ route('delete_offre', $offre->id) }}" class="d-inline"
                                         onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette offre ?')">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                                        <button type="submit" class="btn btn-danger">{{__('buttons.delete')}}</button>
                                     </form>
                                 </td>
                             </tr>
@@ -81,10 +81,10 @@
                 </table>
             </div>
             <div class="btn-container d-flex">
-                <a class="btn btn-info text-white border" href="/formulairOffre">Ajouter une offre</a>
+                <a class="btn btn-info text-white border" href="/formulairOffre">{{__('buttons.addForm')}}</a>
                 <form action="adminLogout" method="POST" onsubmit="return confirmLogout()">
                     @csrf
-                    <button class="btn btn-danger" type="submit">Déconnecter</button>
+                    <button class="btn btn-danger" type="submit">{{__('buttons.desconnect')}}</button>
                 </form>
             </div>
 
@@ -98,19 +98,19 @@
         <section class="table-section">
             <h1 class="header1"
                 style="background-color: #011D70; color: white; padding: 15px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
-                Tableau des offres
+                {{ __('headers.seeOffers') }}
             </h1>
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr>
                             <th>N˚</th>
-                            <th>Référence</th>
-                            <th>{{ __('navbar.objet') }}*</th>
-                            <th>Date limite</th>
-                            <th>Date proroge</th>
-                            <th>Pdf</th>
-                            <th>Observation</th>
+                            <th>{{ __('tables.reference') }}</th>
+                            <th>{{ __('tables.objet') }}</th>
+                            <th>{{__('tables.date_limite')}}</th>
+                            <th>{{ __('tables.date_proroge') }}</th>
+                            <th>pdf</th>
+                            <th>{{ __('tables.observation') }}</th>
                         </tr>
                     </thead>
                     <tbody>

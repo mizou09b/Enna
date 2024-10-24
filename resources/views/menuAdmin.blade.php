@@ -5,7 +5,7 @@
             <a href="/formulairOffre" class="linkClass">
                 <div class="linkContent">
                     <i class="fa-solid fa-briefcase fa-2x"></i>
-                    <span>Form Offer</span>
+                    <span>{{__('headers.offerForm')}}</span>
                 </div>
             </a>
         </div>
@@ -14,7 +14,7 @@
             <a href="/eventsForm" class="linkClass">
                 <div class="linkContent">
                     <i class="fa-solid fa-calendar fa-2x"></i>
-                    <span>Form events</span>
+                    <span>{{__('headers.eventForm')}}</span>
                 </div>
             </a>
         </div>
@@ -23,13 +23,13 @@
             <a href="/ennaNumbers" class="linkClass">
                 <div class="linkContent">
                     <i class="fa-solid fa-arrow-trend-up fa-2x"></i>
-                    <span>ENNA Numbers</span>
+                    <span>{{__('headers.ennaNumbers')}}</span>
                 </div>
             </a>
         </div>
     </div>
 
-    <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">Desconnect</button>
+    <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">{{__('buttons.desconnect')}}</button>
 
     <script>
         async function confirmLogout() {
