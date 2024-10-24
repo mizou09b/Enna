@@ -9,10 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function admin()
-    {
-        return view('admin');
-    }
 
     public function adminLogin(Request $request)
     {
@@ -24,7 +20,7 @@ class AdminController extends Controller
 
         $request->session()->regenerate();
         if (Auth::attempt(['username' => $adminData['username'], 'password' => $adminData['password']])) {
-            return redirect('admin.menuAdmin')->with('success', 'You are logged in.');
+            return redirect('menuAdmin')->with('success', 'You are logged in.');
         } else {
             return redirect('loginAdmin')->with('error', 'You are not an admin!');
             /* return back()->withErrors([
@@ -44,9 +40,6 @@ class AdminController extends Controller
         return redirect('offres')->with('success', 'You are logged out.');
     }
 
-    public function compte() {
-        return view('compte');
-    }
 
     public function ennaNumbers() {
         return view('admin.ennaNumbers');
@@ -63,7 +56,7 @@ class AdminController extends Controller
 
         $ennaNumbers['user_id'] = Auth::id();
         EnnaNumber::create($ennaNumbers);
-        return redirect('/');
+        return redirect(route('homepage'));
     }
 
     public function ennaNumbersDataAndEVents () {

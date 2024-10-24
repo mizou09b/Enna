@@ -31,7 +31,7 @@ class EventsController extends Controller
         }
 
         Event::create($eventsData);
-        return redirect('eventsViews.events');
+        return redirect('events');
     }
 
     public function events()
@@ -53,7 +53,7 @@ class EventsController extends Controller
         $validation_event = $request->validate([
             'title' => 'required',
             'observation' => 'nullable',
-            'event_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|',
+            'event_image' => 'required|image|mimes:jpeg,png,jpg,gif|',
             'date_end_event' => ['required', 'date', 'after_or_equal:today']
         ]);
 
@@ -66,7 +66,7 @@ class EventsController extends Controller
             $validation_event['event_image'] = $imagePath;
 
             $event->update($validation_event);
-            return redirect('eventsViews.events')->with('success', "event edited with success");
+            return redirect('events')->with('success', "event edited with success");
         }
     }
 
@@ -74,6 +74,6 @@ class EventsController extends Controller
     public function delete_event(Event $event)
     {
         $event->delete();
-        return redirect('eventsViews.events')->with('error', 'event deleted!');
+        return redirect('events')->with('error', 'event deleted!');
     }
 }
