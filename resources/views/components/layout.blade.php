@@ -54,8 +54,8 @@
                             <li><a class="dropdown-item navlinks" href="#">Aerodromes geree</a></li>
                             <li><a class="dropdown-item navlinks" aria-expanded="false" href="#">Statistique</a>
                                 <ul class="dropdown-menu navlinks">
-                                    <li><a class="dropdown-item navlinks" href="#">Qui sommes nous</a></li>
-                                    <li><a class="dropdown-item navlinks" href="#">Mission</a></li>
+                                    <li><a class="dropdown-item navlinks" href="#">Traffic en route</a></li>
+                                    <li><a class="dropdown-item navlinks" href="#">traffic aerodromes</a></li>
                                 </ul>
                             </li>
                         </ul>
