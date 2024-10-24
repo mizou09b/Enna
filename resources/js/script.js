@@ -33,12 +33,34 @@ function toggleMenu() {
     menu.classList.toggle("active");
 }
 
-//button for side bar langauges rotation
+// Button for sidebar languages rotation
 const languageButton = document.getElementById("languageDropdown");
 const dropdownMenu = document.querySelector(".dropdown-menu");
 
+// Function to reset the button state
+function resetButton() {
+    languageButton.classList.remove("rotate-btn"); // Remove the rotation class
+}
+
+// Event listener for language selection
+dropdownMenu.addEventListener("click", function(event) {
+    // Check if the clicked element is a language link
+    if (event.target.classList.contains('dropdown-item')) {
+        resetButton(); // Reset button when a language is selected
+    }
+});
+
+// Event listener for button click
 languageButton.addEventListener("click", function () {
     languageButton.classList.toggle("rotate-btn");
+});
+
+// Event listener for clicks outside the dropdown
+document.addEventListener("click", function(event) {
+    // Check if the click was outside the language button or dropdown menu
+    if (!languageButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        resetButton(); // Reset the button when clicking outside
+    }
 });
 
 // Attach the functions to the window object for global accessibility

@@ -79,7 +79,25 @@
                         <div class="logo">
                         </div>
                         <a href="/"><i class="fa-solid fa-house"></i></a>
-                        <a href="/about">{{ __('navbar.about') }}</a>
+                        <div class="dropdown navlinks">
+                            <a href="about" aria-expanded="false">
+                                {{ __('navbar.about') }}
+                            </a>
+                            <ul class="dropdown-menu navlinks">
+                                <li><a class="dropdown-item navlinks" href="#">Qui sommes nous</a></li>
+                                <li><a class="dropdown-item navlinks" href="#">Mission</a></li>
+                                <li><a class="dropdown-item navlinks" href="#">Organisation</a></li>
+                                <li><a class="dropdown-item navlinks" href="#">personnel</a></li>
+                                <li><a class="dropdown-item navlinks" href="#">Textes reglumentaire</a></li>
+                                <li><a class="dropdown-item navlinks" href="#">Aerodromes geree</a></li>
+                                <li><a class="dropdown-item navlinks" aria-expanded="false" href="#">Statistique</a>
+                                    <ul class="dropdown-menu navlinks">
+                                        <li><a class="dropdown-item navlinks" href="#">Qui sommes nous</a></li>
+                                        <li><a class="dropdown-item navlinks" href="#">Mission</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                         <a href="#">{{ __('navbar.services') }}</a>
                         <a href="#">{{ __('navbar.activity') }}</a>
                         <a href="/offres">{{ __('navbar.offers') }}</a>
@@ -101,7 +119,7 @@
 
             @if ($latestEvent && $latestEvent->date_end_event > now())
                 <div class="card position-absolute"
-                    style="top: 120px; right: 40px; width: 15rem; box-shadow: 0 4px 8px rgba(220, 227, 244, 0.8); border-radius: 15px; overflow: hidden; border: 1px solid white;">
+                    style="top: 140px; right: 40px; width: 15rem; box-shadow: 0 4px 8px rgba(220, 227, 244, 0.8); border-radius: 15px; overflow: hidden; border: 1px solid white;">
 
                     @if ($events->isEmpty())
                         <div class="alert alert-info text-center">Aucun événement trouvé.</div>
