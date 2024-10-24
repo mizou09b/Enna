@@ -2,7 +2,7 @@
 
     <div class="containerLink">
         <div class="LinkBody">
-            <a href="/formulairOffre" class="linkClass">
+            <a href="{{ route('OfferForm') }}" class="linkClass">
                 <div class="linkContent">
                     <i class="fa-solid fa-briefcase fa-2x"></i>
                     <span>{{__('headers.offerForm')}}</span>
@@ -11,7 +11,7 @@
         </div>
 
         <div class="LinkBody">
-            <a href="/eventsForm" class="linkClass">
+            <a href="{{ route('eventForm') }}" class="linkClass">
                 <div class="linkContent">
                     <i class="fa-solid fa-calendar fa-2x"></i>
                     <span>{{__('headers.eventForm')}}</span>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="LinkBody">
-            <a href="/ennaNumbers" class="linkClass">
+            <a href="{{ route('ennaNumbers') }}" class="linkClass">
                 <div class="linkContent">
                     <i class="fa-solid fa-arrow-trend-up fa-2x"></i>
                     <span>{{__('headers.ennaNumbers')}}</span>
