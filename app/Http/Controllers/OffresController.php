@@ -39,7 +39,7 @@ class OffresController extends Controller
         }
 
         Offre::create($offresData);
-        return redirect('offres');
+        return redirect('offers.offres');
     }
 
     //pdf download method:
@@ -58,19 +58,19 @@ class OffresController extends Controller
     {
         // Get all offers ordered by created_at in descending order
         $offres = Offre::orderBy('created_at', 'desc')->get();
-        return view('offres', compact('offres'));
+        return view('offers.offres', compact('offres'));
     }
 
     //show the form:
     public function formulair()
     {
-        return view('formulairOffre');
+        return view('offers.formulairOffre');
     }
 
     //edit the offre:
     public function edit_offre(Offre $offre)
     {
-        return view('edit_offre', compact('offre'));
+        return view('offers.edit_offre', compact('offre'));
     }
 
     //update the offre :
@@ -87,13 +87,13 @@ class OffresController extends Controller
         ]);
 
         $offre->update($validation_offre);
-        return redirect('offres')->with('success', "Offre editer avec succes");
+        return redirect('offers.offres')->with('success', "Offre editer avec succes");
     }
 
     //delete Offer :
     public function delete_offre(Offre $offre)
     {
         $offre->delete();
-        return redirect('/offres')->with('error', 'Offre supprimer!');
+        return redirect('offers.offres')->with('error', 'Offre supprimer!');
     }
 }

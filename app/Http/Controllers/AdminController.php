@@ -24,7 +24,7 @@ class AdminController extends Controller
 
         $request->session()->regenerate();
         if (Auth::attempt(['username' => $adminData['username'], 'password' => $adminData['password']])) {
-            return redirect('menuAdmin')->with('success', 'You are logged in.');
+            return redirect('admin.menuAdmin')->with('success', 'You are logged in.');
         } else {
             return redirect('loginAdmin')->with('error', 'You are not an admin!');
             /* return back()->withErrors([
@@ -49,7 +49,7 @@ class AdminController extends Controller
     }
 
     public function ennaNumbers() {
-        return view('ennaNumbers');
+        return view('admin.ennaNumbers');
     }
 
     public function ennaNumbersForm(Request $request) {
@@ -71,7 +71,7 @@ class AdminController extends Controller
         $ennaNumbers = EnnaNumber::orderBy('created_at', 'desc')->get();
          // Get all events ordered by created_at in descending order
          $events = Event::orderBy('created_at', 'desc')->get();
-         return view('homepage', compact('events', 'ennaNumbers'));
+         return view('users.homepage', compact('events', 'ennaNumbers'));
      }
 
 }

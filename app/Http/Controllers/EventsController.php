@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Auth;
 class EventsController extends Controller
 {
 
-    public function eventsPage()
-    {
-        return view('events');
-    }
-
     public function eventsForm(Request $request)
     {
 
@@ -36,20 +31,20 @@ class EventsController extends Controller
         }
 
         Event::create($eventsData);
-        return redirect('events');
+        return redirect('eventsViews.events');
     }
 
     public function events()
     {
         // Get all events ordered by created_at in descending order
         $events = Event::orderBy('created_at', 'desc')->get();
-        return view('events', compact('events'));
+        return view('eventsViews.events', compact('events'));
     }
 
     //edit the event:
     public function edit_event(Event $event)
     {
-        return view('edit_event', compact('event'));
+        return view('eventsViews.edit_event', compact('event'));
     }
 
     //update the event :
@@ -71,7 +66,7 @@ class EventsController extends Controller
             $validation_event['event_image'] = $imagePath;
 
             $event->update($validation_event);
-            return redirect('events')->with('success', "event edited with success");
+            return redirect('eventsViews.events')->with('success', "event edited with success");
         }
     }
 
@@ -79,6 +74,6 @@ class EventsController extends Controller
     public function delete_event(Event $event)
     {
         $event->delete();
-        return redirect('/events')->with('error', 'event deleted!');
+        return redirect('eventsViews.events')->with('error', 'event deleted!');
     }
 }

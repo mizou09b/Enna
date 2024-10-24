@@ -60,50 +60,48 @@
     @endif
 
     <div class="container mt-5">
-        <h1 class="mb-4">Add Event</h1>
-        <form action="/eventsForm" method="POST" enctype="multipart/form-data">
+        <h1 class="mb-4">Enna Numbers</h1>
+        <form action="{{route('ennaNumbers')}}" method="POST" enctype="multipart/form-data">
             @csrf
-
             <div class="mb-3">
-                <label for="title" class="form-label" >Title* :</label>
-                <input type="text" id="title" value="{{ old('title') }}" name="title"
-                    class="form-control @error('title') border-danger @enderror">
-                @error('title')
+                <label for="Aerodromes_Internationaux" class="form-label" >Aérodromes Internationaux* :</label>
+                <input type="text" id="Aerodromes_Internationaux" value="{{ old('Aerodromes_Internationaux') }}" name="Aerodromes_Internationaux"
+                    class="form-control @error('Aerodromes_Internationaux') border-danger @enderror">
+                @error('Aerodromes_Internationaux')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="observation" class="form-label">Observation :</label>
-                <textarea id="observation" name="observation" class="form-control @error('observation') border-danger @enderror "
-                    rows="4" cols="50">{{ old('observation') }}</textarea>
-                @error('observation')
+                <label for="Aerodromes_Nationaux" class="form-label" >Aerodromes Nationaux* :</label>
+                <input type="text" id="Aerodromes_Nationaux" name="Aerodromes_Nationaux" value="{{ old('Aerodromes_Nationaux') }}"
+                 class="form-control @error('Aerodromes_Nationaux') border-danger @enderror">
+                @error('Aerodromes_Nationaux')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="Movements_Aerodromes" class="form-label" >Movements Aérodromes* :</label>
+                <input type="text" id="Movements_Aerodromes" name="Movements_Aerodromes" value="{{ old('Movements_Aerodromes') }}"
+                    class="form-control @error('Movements_Aerodromes') border-danger @enderror">
+                @error('Movements_Aerodromes')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="event_image" class="form-label" >Upload Image :</label>
-                <input type="file" id="event_image" value="{{ old('event_image') }}" name="event_image"
-                    class="form-control @error('event_image') border-danger @enderror">
-                @error('event_image')
+                <label for="Survols" class="form-label" >Survols* :</label>
+                <input type="text" id="Survols" name="Survols" value="{{ old('Survols') }}"
+                    class="form-control @error('Survols') border-danger @enderror">
+                @error('Survols')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
-
-            <div class="mb-3">
-                <label for="date_end_event" class="form-label">Date of event end :</label>
-                <input type="date" id="date_end_event"  value="{{ old('date_end_event') }}" name="date_end_event"
-                    class="form-control @error('date_end_event') border-danger @enderror">
-                @error('date_end_event')
-                    <p class="text-danger">{{ $message }}</p>
-                @enderror
-            </div>
-
 
             <button type="submit" class="btn btn-primary">Confirm</button>
-            <a href="/events" class="btn btn-info ms-2 text-decoration-none">See event</a>
-            <a href="/menuAdmin" class="btn btn-dark ms-2 text-decoration-none">Menu Admin</a>
+            <a href="{{ route('homepage') }}" class="btn btn-info ms-2 text-decoration-none">See Numbers</a>
+            <a href="{{ route('menuAdmin') }}" class="btn btn-dark ms-2 text-decoration-none">Menu Admin</a>
             <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">Desconnect</button>
         </form>
         <div class="container d-flex pb-4">

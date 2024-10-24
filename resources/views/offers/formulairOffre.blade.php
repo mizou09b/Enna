@@ -128,7 +128,7 @@
 
             <button type="submit" class="btn btn-primary">{{__('buttons.confirm')}}</button>
             <a href="/offres" class="btn btn-info ms-2 text-decoration-none">{{__('buttons.consulter')}}</a>
-            <a href="/menuAdmin" class="btn btn-dark ms-2 text-decoration-none">{{__('buttons.menuAdmin')}}</a>
+            <a href="{{ route('menuAdmin') }}" class="btn btn-dark ms-2 text-decoration-none">{{__('buttons.menuAdmin')}}</a>
             <button class="btn btn-danger ms-2" type="button" onclick="confirmLogout()">{{__('buttons.desconnect')}}</button>
         </form>
     </div>

@@ -40,9 +40,9 @@
                         alt="Logo de l'ENNA - École Nationale de Navigation et d'Aéronautique" height="50">
                 </div>
                 <div class="nav-links">
-                    <a href="/"><i class="fa-solid fa-house"></i></a>
+                    <a href="{{ route('homepage') }}"><i class="fa-solid fa-house"></i></a>
                     <div class="dropdown navlinks">
-                        <a href="about" aria-expanded="false">
+                        <a href="{{route('about')}}" aria-expanded="false">
                             {{ __('navbar.about') }}
                         </a>
                         <ul class="dropdown-menu navlinks">
@@ -78,9 +78,9 @@
                     <div class="nav-links">
                         <div class="logo">
                         </div>
-                        <a href="/"><i class="fa-solid fa-house"></i></a>
+                        <a href="{{ route('homepage') }}"><i class="fa-solid fa-house"></i></a>
                         <div class="dropdown navlinks">
-                            <a href="about" aria-expanded="false">
+                            <a href="{{route('about')}}" aria-expanded="false">
                                 {{ __('navbar.about') }}
                             </a>
                             <ul class="dropdown-menu navlinks">
