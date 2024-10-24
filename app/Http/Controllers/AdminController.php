@@ -20,11 +20,9 @@ class AdminController extends Controller
 
         $request->session()->regenerate();
         if (Auth::attempt(['username' => $adminData['username'], 'password' => $adminData['password']])) {
-            return redirect('menuAdmin')->with('success', 'You are logged in.');
+            return redirect(route('menuAdmin'))->with('success', 'You are logged in.');
         } else {
-            return redirect('loginAdmin')->with('error', 'You are not an admin!');
-            /* return back()->withErrors([
-            'failed' => 'wrong username or password']);*/
+            return redirect(route('login'))->with('error', 'You are not an admin!');
         }
     }
 
@@ -37,7 +35,7 @@ class AdminController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('offres')->with('success', 'You are logged out.');
+        return redirect(route('offers'))->with('success', 'You are logged out.');
     }
 
 

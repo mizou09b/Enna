@@ -31,7 +31,7 @@ class EventsController extends Controller
         }
 
         Event::create($eventsData);
-        return redirect('events');
+        return redirect(route('events'));
     }
 
     public function events()
@@ -66,7 +66,7 @@ class EventsController extends Controller
             $validation_event['event_image'] = $imagePath;
 
             $event->update($validation_event);
-            return redirect('events')->with('success', "event edited with success");
+            return redirect(route('events'))->with('success', "event edited with success");
         }
     }
 
@@ -74,6 +74,6 @@ class EventsController extends Controller
     public function delete_event(Event $event)
     {
         $event->delete();
-        return redirect('events')->with('error', 'event deleted!');
+        return redirect(route('events'))->with('error', 'event deleted!');
     }
 }

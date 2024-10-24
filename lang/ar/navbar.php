@@ -7,5 +7,8 @@ return [
     'activity' => 'أنشطة',
     'offers' => "العروض",
     'events' => "الأحداث",
-    'bg-header' => "المؤسسة الوطنية <br><span class='indented-text'> للملاحة الجوية </span>",
+    'bg-header' => "المؤسسة الوطنية للملاحة الجوية ",
 ];
+
+// <br><span class='indented-text'>
+// </span>

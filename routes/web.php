@@ -20,7 +20,7 @@ Route::middleware(['LangTradMiddleware'])->group(function () {
     Route::post('adminLogout', [AdminController::class, 'adminLogout']);
 
     //events routes:
-    Route::get('events', [EventsController::class, 'events']);
+    Route::get('events', [EventsController::class, 'events'])->name('events');
     Route::view('eventsForm', 'eventsViews.eventsForm')->name('eventForm')->middleware('auth');
     Route::post('eventsForm', [EventsController::class, 'eventsForm']);
     Route::get('edit/event/{event}', [EventsController::class, 'edit_event'])->name('edit_event')->middleware('auth');
@@ -28,7 +28,7 @@ Route::middleware(['LangTradMiddleware'])->group(function () {
     Route::delete('delete/event/{event}', [EventsController::class, 'delete_event'])->name('delete_event');
 
     //offres routes :
-    Route::get('offres', [OffresController::class, 'offres']);
+    Route::get('offres', [OffresController::class, 'offres'])->name('offers');
     Route::post('offres', [OffresController::class, 'publierOffre'])->middleware('auth');
     Route::get('pdfDownload{pdf}', [OffresController::class, 'pdfDownload'])->name('pdf.download');
     Route::get('formulairOffre', [OffresController::class, 'formulair'])->name('OfferForm')->middleware('auth');

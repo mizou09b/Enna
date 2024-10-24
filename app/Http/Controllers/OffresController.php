@@ -39,7 +39,7 @@ class OffresController extends Controller
         }
 
         Offre::create($offresData);
-        return redirect('offers.offres');
+        return redirect(route('offers'));
     }
 
     //pdf download method:
@@ -87,13 +87,13 @@ class OffresController extends Controller
         ]);
 
         $offre->update($validation_offre);
-        return redirect('offres')->with('success', "Offre editer avec succes");
+        return redirect(route('offers'))->with('success', "Offre editer avec succes");
     }
 
     //delete Offer :
     public function delete_offre(Offre $offre)
     {
         $offre->delete();
-        return redirect('offres')->with('error', 'Offre supprimer!');
+        return redirect(route('offers'))->with('error', 'Offre supprimer!');
     }
 }
